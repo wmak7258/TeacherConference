@@ -1,4 +1,4 @@
-//
+// Wayne Mak
 //  ViewController.swift
 //  TeacherConference
 //
