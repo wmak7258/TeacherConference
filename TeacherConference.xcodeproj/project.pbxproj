@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E73382151CC52A0E00F1F44C /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73382141CC52A0E00F1F44C /* StudentInformation.swift */; };
 		E7FBF1DB1CBFEB19000DC253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FBF1DA1CBFEB19000DC253 /* AppDelegate.swift */; };
 		E7FBF1DD1CBFEB19000DC253 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FBF1DC1CBFEB19000DC253 /* ViewController.swift */; };
 		E7FBF1E01CBFEB19000DC253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FBF1DE1CBFEB19000DC253 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E73382141CC52A0E00F1F44C /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		E7FBF1D71CBFEB19000DC253 /* TeacherConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeacherConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FBF1DA1CBFEB19000DC253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7FBF1DC1CBFEB19000DC253 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				E7FBF1DA1CBFEB19000DC253 /* AppDelegate.swift */,
 				E7FBF1DC1CBFEB19000DC253 /* ViewController.swift */,
+				E73382141CC52A0E00F1F44C /* StudentInformation.swift */,
 				E7FBF1DE1CBFEB19000DC253 /* Main.storyboard */,
 				E7FBF1E41CBFEB19000DC253 /* Assets.xcassets */,
 				E7FBF1E61CBFEB19000DC253 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73382151CC52A0E00F1F44C /* StudentInformation.swift in Sources */,
 				E7FBF1DD1CBFEB19000DC253 /* ViewController.swift in Sources */,
 				E7FBF1E31CBFEB19000DC253 /* TeacherConference.xcdatamodeld in Sources */,
 				E7FBF1DB1CBFEB19000DC253 /* AppDelegate.swift in Sources */,
@@ -491,6 +495,7 @@
 				E7FBF2041CBFEB19000DC253 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7FBF2051CBFEB19000DC253 /* Build configuration list for PBXNativeTarget "TeacherConferenceTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				E7FBF2071CBFEB19000DC253 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7FBF2081CBFEB19000DC253 /* Build configuration list for PBXNativeTarget "TeacherConferenceUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				E7FBF20A1CBFEB19000DC253 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
