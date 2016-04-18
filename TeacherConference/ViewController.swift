@@ -1,4 +1,4 @@
-// Georgios Siozios
+// Wayne Mak
 //  ViewController.swift
 //  TeacherConference
 //
