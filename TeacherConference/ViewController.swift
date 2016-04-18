@@ -9,9 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var information = studentInformation()
     override func viewDidLoad() {
         super.viewDidLoad()
+        var studentInfo :Dictionary <String,String> = ["name": "\(information.name)", "email": "\(information.email)", "ID": "\(information.ID)", "phoneNumber": "\(information.phone)", "school": "\(information.school)"]
+
     }
 
     override func didReceiveMemoryWarning() {
