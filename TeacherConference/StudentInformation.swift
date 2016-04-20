@@ -1,11 +1,13 @@
 import UIKit
 
-class StudentInformation: UIViewController {
-    var studentName: String
-    var level: String
-    var studentID: String
-
-    init(StudentName n:String, Level l:String, StudentID i:String)
+class teacherInformation {
+    var teacherName: String
+    var classes: String
+    var roomNumber: String
+    var time: String
+    var teacherEmail: String
+    
+    init(TeacherName n:String,Classes c:String, RoomNumber rn:String, time t:String, TeacherEmail e:String)
     {
         studentName = n
         level = l
