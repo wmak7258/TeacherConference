@@ -9,16 +9,19 @@ class teacherInformation {
     
     init(TeacherName n:String,Classes c:String, RoomNumber rn:String, time t:String, TeacherEmail e:String)
     {
-        studentName = n
-        level = l
-        studentID = i
+        teacherName = n
+        classes = c
+        roomNumber = rn
+        time = t
+        teacherEmail = e
     }
     
     init()
     {
-        studentName = ""
-        level = ""
-        studentID = ""
+        teacherName = ""
+        classes = ""
+        roomNumber = ""
+        time = ""
+        teacherEmail = ""
     }
-
 }
