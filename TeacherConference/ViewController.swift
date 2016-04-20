@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var information = studentInformation()
+    var information = teacherInformation()
 
     @IBOutlet weak var studentNameTextField: UITextField!
     @IBOutlet weak var studentIdentificationTextField: UITextField!
