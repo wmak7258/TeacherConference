@@ -1,6 +1,6 @@
 import UIKit
 
-class studentInformation {
+class teacherInformation {
     var teacherName: String
     var classes: String
     var roomNumber: String
