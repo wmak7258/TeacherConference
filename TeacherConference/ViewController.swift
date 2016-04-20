@@ -19,13 +19,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    @IBAction func goToNextViewController(sender: UIButton) {
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
+    
+
 
 }
 
