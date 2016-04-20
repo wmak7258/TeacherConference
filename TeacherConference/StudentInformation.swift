@@ -1,29 +1,27 @@
 import UIKit
 
 class studentInformation {
-    var name: String
-    var email: String
-    var ID: String
-    var phone: String
-    var school: String
+    var teacherName: String
+    var classes: String
+    var roomNumber: String
+    var time: String
+    var teacherEmail: String
     
-    init(Name n:String,Email e:String, ID id:String, Phone p:String, School s:String)
+    init(TeacherName n:String,Classes c:String, RoomNumber rn:String, time t:String, TeacherEmail e:String)
     {
-        name = n
-        email = e
-        ID = id
-        phone = p
-        school = s
+        teacherName = n
+        classes = c
+        roomNumber = rn
+        time = t
+        teacherEmail = e
     }
     
     init()
     {
-        name = ""
-        email = ""
-        ID = ""
-        phone = ""
-        school = ""
+        teacherName = ""
+        classes = ""
+        roomNumber = ""
+        time = ""
+        teacherEmail = ""
     }
-
-    
 }
