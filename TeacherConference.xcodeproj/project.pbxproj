@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E73382151CC52A0E00F1F44C /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73382141CC52A0E00F1F44C /* StudentInformation.swift */; };
+		E7A07AFA1CC530FF000D1C82 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A07AF91CC530FF000D1C82 /* ScheduleViewController.swift */; };
 		E7FBF1DB1CBFEB19000DC253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FBF1DA1CBFEB19000DC253 /* AppDelegate.swift */; };
 		E7FBF1DD1CBFEB19000DC253 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FBF1DC1CBFEB19000DC253 /* ViewController.swift */; };
 		E7FBF1E01CBFEB19000DC253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7FBF1DE1CBFEB19000DC253 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		E73382141CC52A0E00F1F44C /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
+		E7A07AF91CC530FF000D1C82 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		E7FBF1D71CBFEB19000DC253 /* TeacherConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeacherConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FBF1DA1CBFEB19000DC253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7FBF1DC1CBFEB19000DC253 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				E7FBF1DA1CBFEB19000DC253 /* AppDelegate.swift */,
+				E7A07AF91CC530FF000D1C82 /* ScheduleViewController.swift */,
 				E7FBF1DC1CBFEB19000DC253 /* ViewController.swift */,
 				E73382141CC52A0E00F1F44C /* StudentInformation.swift */,
 				E7FBF1DE1CBFEB19000DC253 /* Main.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A07AFA1CC530FF000D1C82 /* ScheduleViewController.swift in Sources */,
 				E73382151CC52A0E00F1F44C /* StudentInformation.swift in Sources */,
 				E7FBF1DD1CBFEB19000DC253 /* ViewController.swift in Sources */,
 				E7FBF1E31CBFEB19000DC253 /* TeacherConference.xcdatamodeld in Sources */,
