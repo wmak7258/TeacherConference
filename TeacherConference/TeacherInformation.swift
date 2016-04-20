@@ -7,7 +7,7 @@ class teacherInformation {
     var time: String
     var teacherEmail: String
     
-    init(TeacherName n:String,Classes c:String, RoomNumber rn:String, time t:String, TeacherEmail e:String)
+    init(TeacherName n:String,Classes c:String, RoomNumber rn:String, Time t:String, TeacherEmail e:String)
     {
         teacherName = n
         classes = c
