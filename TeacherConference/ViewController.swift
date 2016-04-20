@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var studentInfo :Dictionary <String,String> = ["name": "\(information.name)", "email": "\(information.email)", "ID": "\(information.ID)", "phoneNumber": "\(information.phone)", "school": "\(information.school)"]
+        var studentInfo :Dictionary <String,String> = ["Teacher Name": "\(information.teacherName)", "Class": "\(information.classes)", "Room Number": "\(information.roomNumber)", "Time": "\(information.time)", "Teacher E-Mail": "\(information.teacherEmail)"]
 
     }
     
