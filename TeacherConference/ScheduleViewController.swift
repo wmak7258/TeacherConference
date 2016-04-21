@@ -9,14 +9,15 @@
 import UIKit
 
 class ScheduleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+    var information = teacherInformation()
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let teacherInfo :Dictionary <String,String> = ["Teacher Name": "\(information.teacherName)", "Class": "\(information.classes)", "Room Number": "\(information.roomNumber)", "Time": "\(information.time)", "Teacher E-Mail": "\(information.teacherEmail)"]
+        print(teacherInfo)
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 8
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
