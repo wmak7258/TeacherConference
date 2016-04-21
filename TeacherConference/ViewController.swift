@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var information = teacherInformation()
+    
 
     @IBOutlet weak var studentNameTextField: UITextField!
     @IBOutlet weak var studentIdentificationTextField: UITextField!
@@ -20,8 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let teacherInfo :Dictionary <String,String> = ["Teacher Name": "\(information.teacherName)", "Class": "\(information.classes)", "Room Number": "\(information.roomNumber)", "Time": "\(information.time)", "Teacher E-Mail": "\(information.teacherEmail)"]
-        print(teacherInfo)
+       
     }
     
     @IBAction func goToNextViewController(sender: UIButton) {
