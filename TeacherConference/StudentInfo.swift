@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StudentInformation{
+class Student{
     let name: String
     let grade: Int
     let ID: Int
