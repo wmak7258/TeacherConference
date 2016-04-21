@@ -158,7 +158,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <outlet property="myTableView" destination="2mh-Wh-VwP" id="7wo-4c-6ls"/>
+                        <outlet property="myTableView" destination="2mh-Wh-VwP" id="09T-JE-7ka"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAG-lB-5Tz" userLabel="First Responder" sceneMemberID="firstResponder"/>
