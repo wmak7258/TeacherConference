@@ -16,7 +16,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
 
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 8
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

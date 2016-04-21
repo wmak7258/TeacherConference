@@ -9,7 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
+    var studentInfo = Student()
+    var parentInfo = Parent()
+
 
     @IBOutlet weak var studentNameTextField: UITextField!
     @IBOutlet weak var studentIdentificationTextField: UITextField!
@@ -24,6 +27,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func goToNextViewController(sender: UIButton) {
+    parentInfo.parentName == parentNameTextField.text
+    parentInfo.parentEmail == emailTextField.text
+    parentInfo.parentPhoneNumber == Int(phoneNumberTextField.text!)!
     }
 
     
