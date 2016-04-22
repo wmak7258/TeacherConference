@@ -9,15 +9,16 @@
 import UIKit
 
 class ScheduleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var information = Teacher()
-    var parentInfo = Parent()
-    var studentInfo = Student()
+    
+    var studentInfo2 = Student()
+    var parentInfo2 = Parent()
+    var teacherInfo2 = Teacher()
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let teacherInfo :Dictionary <String,String> = ["Teacher Name": "\(information.teacherName)", "Class": "\(information.classes)", "Room Number": "\(information.roomNumber)", "Time": "\(information.time)", "Teacher E-Mail": "\(information.teacherEmail)"]
-        let parent :Dictionary <String,String> = ["Parent Name": "\(parentInfo.parentName)", "Parent E-Mail": "\(parentInfo.parentEmail)", "Parent Phone Number": "\(parentInfo.parentPhoneNumber)"]
-        let student :Dictionary <String,String> = ["Student Name": "\(studentInfo.name)", "Student Grade": "\(studentInfo.grade)", "Student ID": "\(studentInfo.ID)"]
+        let teacherInfo :Dictionary <String,String> = ["Teacher Name": "\(teacherInfo2).teacherName)", "Class": "\(teacherInfo2.classes)", "Room Number": "\(teacherInfo2.roomNumber)", "Time": "\(teacherInfo2.time)", "Teacher E-Mail": "\(teacherInfo2.teacherEmail)"]
+        let parent :Dictionary <String,String> = ["Parent Name": "\(parentInfo2.parentName)", "Parent E-Mail": "\(parentInfo2.parentEmail)", "Parent Phone Number": "\(parentInfo2.parentPhoneNumber)"]
+        let student :Dictionary <String,String> = ["Student Name": "\(studentInfo2.name)", "Student Grade": "\(studentInfo2.grade)", "Student ID": "\(studentInfo2.ID)"]
         print(parent)
         print(student)
         print(teacherInfo)
