@@ -168,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="2068" y="349"/>
         </scene>
-        <!--View Controller-->
+        <!--Class Info View Controller-->
         <scene sceneID="XeY-gv-odI">
             <objects>
-                <viewController id="f4V-Ob-NEx" sceneMemberID="viewController">
+                <viewController id="f4V-Ob-NEx" customClass="ClassInfoViewController" customModule="TeacherConference" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Thx-2l-vUN"/>
                         <viewControllerLayoutGuide type="bottom" id="TMZ-46-eSV"/>
