@@ -1,7 +1,7 @@
 //  Brandon Perkins
 //  ViewController.swift
 //  TeacherConference
-//
+//  
 //  Created by student1 on 4/14/16.
 //  Copyright © 2016 John Hersey High school. All rights reserved.
 //
@@ -9,7 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var information = teacherInformation()
+
+    var studentInfo = Student()
+    var parentInfo = Parent()
+
 
     @IBOutlet weak var studentNameTextField: UITextField!
     @IBOutlet weak var studentIdentificationTextField: UITextField!
@@ -20,11 +23,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var teacherInfo :Dictionary <String,String> = ["Teacher Name": "\(information.teacherName)", "Class": "\(information.classes)", "Room Number": "\(information.roomNumber)", "Time": "\(information.time)", "Teacher E-Mail": "\(information.teacherEmail)"]
-
+       
     }
     
     @IBAction func goToNextViewController(sender: UIButton) {
+    parentInfo.parentName == parentNameTextField.text
+    parentInfo.parentEmail == emailTextField.text
+    parentInfo.parentPhoneNumber == Int(phoneNumberTextField.text!)!
     }
 
     
