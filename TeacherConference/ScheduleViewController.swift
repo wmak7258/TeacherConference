@@ -9,7 +9,10 @@
 import UIKit
 
 class ScheduleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
+    var studentInfo2 = Student()
+    var parentInfo2 = Parent()
+    var teacherInfo2 = Teacher()
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,5 +25,6 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         <#code#>
     }
+    
 
 }
