@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     var studentInfo = Student()
     var parentInfo = Parent()
+    var teacherInfo = Teacher()
 
 
     @IBOutlet weak var studentNameTextField: UITextField!
@@ -31,8 +32,11 @@ class ViewController: UIViewController {
     parentInfo.parentEmail == emailTextField.text
     parentInfo.parentPhoneNumber == Int(phoneNumberTextField.text!)!
     }
-
-    
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let NVC = segue.destinationViewController as! ScheduleViewController
+        NVC.studentInfo2 = studentInfo
+        NVC.parentInfo2 = parentInfo
+        NVC.teacherInfo2 = teacherInfo
+    }
 
 }

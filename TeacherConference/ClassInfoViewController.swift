@@ -10,6 +10,10 @@ import UIKit
 
 class ClassInfoViewController: UIViewController {
 
+    var studentInfo3 = Student()
+    var parentInfo3 = Parent()
+    var teacherInfo3 = Teacher()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
