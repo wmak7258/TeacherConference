@@ -147,7 +147,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="V0b-7X-cAC" kind="show" id="JRs-cV-U0A"/>
+                                            <segue destination="f4V-Ob-NEx" kind="show" id="nG0-nj-6mf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -166,7 +166,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAG-lB-5Tz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2193" y="349"/>
+            <point key="canvasLocation" x="2068" y="349"/>
+        </scene>
+        <!--Class Info View Controller-->
+        <scene sceneID="XeY-gv-odI">
+            <objects>
+                <viewController id="f4V-Ob-NEx" customClass="ClassInfoViewController" customModule="TeacherConference" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Thx-2l-vUN"/>
+                        <viewControllerLayoutGuide type="bottom" id="TMZ-46-eSV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SN0-hn-ymy">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zes-hH-Sub">
+                                <rect key="frame" x="193" y="642" width="106" height="30"/>
+                                <state key="normal" title="Pick Times Slot"/>
+                                <connections>
+                                    <segue destination="V0b-7X-cAC" kind="show" id="xRV-Dw-dig"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqf-jh-QZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2872" y="349"/>
         </scene>
         <!--Times View Controller-->
         <scene sceneID="oRB-hZ-A12">
@@ -205,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zQ-Up-xa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2997" y="349"/>
+            <point key="canvasLocation" x="3673" y="349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HQf-cU-TLK">

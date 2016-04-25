@@ -24,4 +24,5 @@ class Parent {
         parentEmail = ""
         parentPhoneNumber = 0
     }
+
 }
