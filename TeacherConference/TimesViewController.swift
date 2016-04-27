@@ -16,7 +16,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        <#code#>
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
