@@ -30,6 +30,12 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let NVC = segue.destinationViewController as! ClassInfoViewController
+        NVC.studentInfo3 = studentInfo2
+        NVC.parentInfo3 = parentInfo2
+        NVC.teacherInfo3 = teacherInfo2
+    }
     
     
 }
