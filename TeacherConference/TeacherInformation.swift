@@ -3,34 +3,31 @@ import UIKit
 class Teacher {
     var teacherName: String
     var classes: String
-    var password: String
-    var school: String
-    var teacherID: String
     var roomNumber: String
     var time: String
     var teacherEmail: String
+    var teacherID: String
+    var teacherSchool: String
     
-    init(TeacherName n:String,Classes c:String,Password p:String,School s:String,TeacherID i:String, RoomNumber rn:String, Time t:String, TeacherEmail e:String)
+    init(TeacherName n:String,Classes c:String, RoomNumber rn:String, time t:String, TeacherEmail e:String, TeacherID id:String, TeacherSchool ts:String)
     {
         teacherName = n
         classes = c
-        password = p
-        school = s
-        teacherID = i
         roomNumber = rn
         time = t
         teacherEmail = e
+        teacherID = id
+        teacherSchool = ts
     }
     
     init()
     {
         teacherName = ""
         classes = ""
-        password = ""
-        school = ""
-        teacherID = ""
         roomNumber = ""
         time = ""
         teacherEmail = ""
+        teacherID = ""
+        teacherSchool = ""
     }
 }
