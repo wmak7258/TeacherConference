@@ -18,8 +18,8 @@ class Classes {
        
     }
     init() {
-        class1 = ""
-        teacher = ""
+        class1 = " "
+        teacher = " "
     }
     
     

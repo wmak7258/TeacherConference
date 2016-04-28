@@ -52,7 +52,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         let currentCell = tableView.dequeueReusableCellWithIdentifier("myCell")!
         let currentClass = classArray[indexPath.row]
         currentCell.textLabel!.text = currentClass.class1
-        currentCell.detailTextLabel!.text = currentClass.teacher
+        currentCell.detailTextLabel?.text = currentClass.teacher
         return currentCell
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
