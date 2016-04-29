@@ -9,9 +9,9 @@
 import Foundation
 
 class Parent {
-    let parentName: String
-    let parentEmail: String
-    let parentPhoneNumber: Int
+    var parentName: String
+    var parentEmail: String
+    var parentPhoneNumber: Int
     
     init(Name n:String, Email e:String, PhoneNumber p: Int){
         parentName = n

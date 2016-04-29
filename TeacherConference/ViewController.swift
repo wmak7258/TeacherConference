@@ -28,8 +28,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func goToNextViewController(sender: UIButton) {
-    parentInfo.parentName == parentNameTextField.text
-    parentInfo.parentEmail == emailTextField.text
+    parentInfo.parentName = parentNameTextField.text!
+    parentInfo.parentEmail = emailTextField.text!
     parentInfo.parentPhoneNumber == Int(phoneNumberTextField.text!)!
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
