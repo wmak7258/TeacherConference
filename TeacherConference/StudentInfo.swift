@@ -9,9 +9,9 @@
 import Foundation
 
 class Student{
-    let name: String
-    let grade: Int
-    let ID: Int
+    var name: String
+    var grade: Int
+    var ID: Int
     
     init(Name n:String, Grade g:Int, ID i:Int){
         name = n
