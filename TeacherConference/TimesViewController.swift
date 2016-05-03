@@ -10,7 +10,11 @@ import UIKit
 
 class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var studentInfo4 = Student()
+    var parentInfo4 = Parent()
+    var teacherInfo4 = Teacher()
     var timeInformation = Time()
+    var classInfo = Classes()
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -38,5 +42,17 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return timesArray.count
     }
   
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let NVC = segue.destinationViewController as! EndViewController
+        let currentRow = myTableView.indexPathForSelectedRow?.row
+        NVC.studentInfo5 = studentInfo4
+        NVC.parentInfo5 = parentInfo4
+        NVC.teacherInfo5 = teacherInfo4
+        NVC.timeInfo = timesArray[currentRow!]
+        NVC.classInfo = classInfo
+       
+        
+        
+    }
 
 }
