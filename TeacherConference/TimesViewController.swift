@@ -50,7 +50,15 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         NVC.teacherInfo5 = teacherInfo4
         NVC.timeInfo = timesArray[currentRow!]
         NVC.classInfo = classInfo
-       
+        if timesArray[currentRow!].taken == true{
+            let alert = UIAlertController(title: "That time slot is filled", message: "You may not book that time", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: {
+                action in
+                print("Dismiss was pressed")
+            })
+            alert.addAction(cancelAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
         
     }
