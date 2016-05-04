@@ -31,7 +31,9 @@ class ViewController: UIViewController {
     studentInfo.name = studentNameTextField.text!
     parentInfo.parentName = parentNameTextField.text!
     parentInfo.parentEmail = emailTextField.text!
-    parentInfo.parentPhoneNumber == Int(phoneNumberTextField.text!)!
+    print(parentInfo.parentPhoneNumber)
+    parentInfo.parentPhoneNumber = Int(phoneNumberTextField.text!)!
+    print(parentInfo.parentPhoneNumber)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ScheduleViewController
