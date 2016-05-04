@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func goToNextViewController(sender: UIButton) {
+    studentInfo.name = studentNameTextField.text!
     parentInfo.parentName = parentNameTextField.text!
     parentInfo.parentEmail = emailTextField.text!
     parentInfo.parentPhoneNumber == Int(phoneNumberTextField.text!)!
