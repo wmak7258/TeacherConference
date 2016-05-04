@@ -21,7 +21,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var timesArray: [Time] = [Time]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let time1 = Time(Time: "5:00", Taken: true)
+        let time1 = Time(Time: "5:00", Taken: false)
         timesArray.append(time1)
         
 

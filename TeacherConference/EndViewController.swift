@@ -6,9 +6,11 @@
 //  Copyright © 2016 John Hersey High school. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import MessageUI
 
-class EndViewController: UIViewController {
+class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
 
     var studentInfo5 = Student()
     var parentInfo5 = Parent()
@@ -50,8 +52,12 @@ class EndViewController: UIViewController {
             })
             let okAction = UIAlertAction(title: "Yes", style: .Default, handler: {
                 action in
-                //This is where we would put the email part
-            })
+                let mailComposeViewController = self.configuredMailComposeViewController()
+                if MFMailComposeViewController.canSendMail() {
+                    self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+                } else {
+                    self.showSendMailErrorAlert()
+                }            })
             alert.addAction(okAction)
             alert.addAction(cancelAction)
             self.presentViewController(alert, animated: true, completion: nil)
@@ -59,8 +65,32 @@ class EndViewController: UIViewController {
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         self.presentViewController(alert, animated: true, completion: nil)
-
     }
     
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients([teacherInfo5.teacherEmail])
+        mailComposerVC.setSubject("Sent by \(parentInfo5.parentEmail)")
+        mailComposerVC.setMessageBody("\(parentInfo5.parentName) has scheduled a conference at \(timeInfo.time) for \(studentInfo5.name)'s \(classInfo.class1). For more ways to contact \(parentInfo5.parentName) his/her email is \(parentInfo5.parentEmail) and his/her phone number is \(parentInfo5.parentPhoneNumber).", isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Dissmiss", style: UIAlertActionStyle.Cancel, handler: {
+            action in
+        })
+        sendMailErrorAlert.addAction(cancelAction)
+        self.presentViewController(sendMailErrorAlert, animated: true, completion: nil)
+    }
+    
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+
 
 }
