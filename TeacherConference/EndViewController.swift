@@ -38,29 +38,26 @@ class EndViewController: UIViewController {
 
     @IBAction func presentAlert(sender: UIButton) {
         let alert = UIAlertController(title: "Are you done?", message: "Are you sure that all this information is correct?", preferredStyle: .Alert)
-        let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: {
+        let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: {
             action in
-            print("Dismiss was pressed")
-        })
-        alert.addAction(cancelAction)
-        let okAction = UIAlertAction(title: "Ok", style: .Default, handler: {
+            })
+        let okAction = UIAlertAction(title: "Yes", style: .Default, handler: {
             action in
             
-            let alert = UIAlertController(title: "Email", message: "Do you want to send an email to ht teacher?", preferredStyle: .Alert)
-            let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: {
+            let alert = UIAlertController(title: "Email", message: "Do you want to send an email to the teacher?", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: {
                 action in
-                print("Dismiss was pressed")
             })
-            alert.addAction(cancelAction)
-            let okAction = UIAlertAction(title: "Ok", style: .Default, handler: {
+            let okAction = UIAlertAction(title: "Yes", style: .Default, handler: {
                 action in
-                print("okAction was pressed")
-                
+                //This is where we would put the email part
             })
             alert.addAction(okAction)
+            alert.addAction(cancelAction)
             self.presentViewController(alert, animated: true, completion: nil)
         })
         alert.addAction(okAction)
+        alert.addAction(cancelAction)
         self.presentViewController(alert, animated: true, completion: nil)
 
     }
