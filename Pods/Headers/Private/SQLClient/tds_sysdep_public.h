@@ -1,0 +1,1 @@
+../../../SQLClient/SQLClient/SQLClient/SQLClient/tds_sysdep_public.h

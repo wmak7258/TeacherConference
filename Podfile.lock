@@ -1,0 +1,10 @@
+PODS:
+  - SQLClient (0.1.3)
+
+DEPENDENCIES:
+  - SQLClient (~> 0.1.1)
+
+SPEC CHECKSUMS:
+  SQLClient: b29986ae0eeddd4a84436543fe97882ba447fc7a
+
+COCOAPODS: 0.39.0
