@@ -17,6 +17,8 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var myTableView: UITableView!
     
     var classArray: [Classes] = [Classes]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let teacherInfo :Dictionary <String,String> = ["Teacher Name": "\(teacherInfo2).teacherName)", "Class": "\(teacherInfo2.classes)", "Room Number": "\(teacherInfo2.roomNumber)", "Time": "\(teacherInfo2.time)", "Teacher E-Mail": "\(teacherInfo2.teacherEmail)", "TeacherID": "\(teacherInfo2.teacherID)", "Teacher School": "\(teacherInfo2.teacherSchool)"]
@@ -43,6 +45,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         let class8 = Classes(class1: "qwsxcf", teacher: "ujm")
         classArray.append(class8)
         
+        
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classArray.count
@@ -53,13 +56,17 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         let currentClass = classArray[indexPath.row]
         currentCell.textLabel!.text = currentClass.class1
         currentCell.detailTextLabel?.text = currentClass.teacher
+        
         return currentCell
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ClassInfoViewController
+        let currentRow = myTableView.indexPathForSelectedRow?.row
+        NVC.classInfo = classArray[currentRow!]
         NVC.studentInfo3 = studentInfo2
         NVC.parentInfo3 = parentInfo2
         NVC.teacherInfo3 = teacherInfo2
+        
     }
     
     
