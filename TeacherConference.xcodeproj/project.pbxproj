@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1BF585DFD6CDB3E628C36B8 /* Pods_TeacherConference.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1BB8F59AFEC7E1A8B54ABE /* Pods_TeacherConference.framework */; };
 		E73382151CC52A0E00F1F44C /* TeacherInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73382141CC52A0E00F1F44C /* TeacherInformation.swift */; };
+		E74E5E321CDCE9E7008FA27A /* DataBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74E5E311CDCE9E7008FA27A /* DataBaseController.swift */; };
 		E755F89C1CD3AB3000986ACD /* Times.swift in Sources */ = {isa = PBXBuildFile; fileRef = E755F89B1CD3AB3000986ACD /* Times.swift */; };
 		E755F89E1CD3AFCD00986ACD /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E755F89D1CD3AFCD00986ACD /* EndViewController.swift */; };
 		E767F3011CCA6DFF0053E386 /* ClassInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767F3001CCA6DFF0053E386 /* ClassInfoViewController.swift */; };
@@ -44,7 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D1BB8F59AFEC7E1A8B54ABE /* Pods_TeacherConference.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeacherConference.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B31C7FFA8F071B2CAC498FA0 /* Pods-TeacherConference.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeacherConference.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeacherConference/Pods-TeacherConference.debug.xcconfig"; sourceTree = "<group>"; };
+		CE3D6B53D0D81C4B0926AA43 /* Pods-TeacherConference.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeacherConference.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeacherConference/Pods-TeacherConference.release.xcconfig"; sourceTree = "<group>"; };
 		E73382141CC52A0E00F1F44C /* TeacherInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherInformation.swift; sourceTree = "<group>"; };
+		E74E5E311CDCE9E7008FA27A /* DataBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseController.swift; sourceTree = "<group>"; };
 		E755F89B1CD3AB3000986ACD /* Times.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Times.swift; sourceTree = "<group>"; };
 		E755F89D1CD3AFCD00986ACD /* EndViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		E767F3001CCA6DFF0053E386 /* ClassInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassInfoViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BF585DFD6CDB3E628C36B8 /* Pods_TeacherConference.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20A63A870FE677EA62DD427D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D1BB8F59AFEC7E1A8B54ABE /* Pods_TeacherConference.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E7FBF1CE1CBFEB19000DC253 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +116,8 @@
 				E7FBF1F11CBFEB19000DC253 /* TeacherConferenceTests */,
 				E7FBF1FC1CBFEB19000DC253 /* TeacherConferenceUITests */,
 				E7FBF1D81CBFEB19000DC253 /* Products */,
+				F0C1F8C33734AF5B29EFEE35 /* Pods */,
+				20A63A870FE677EA62DD427D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				E7FBF1DA1CBFEB19000DC253 /* AppDelegate.swift */,
+				E74E5E311CDCE9E7008FA27A /* DataBaseController.swift */,
 				E7D8DC171CC92F97004348A3 /* StudentInfo.swift */,
 				E7FB3C631CD10A2C0021426B /* Classes.swift */,
 				E73382141CC52A0E00F1F44C /* TeacherInformation.swift */,
@@ -127,12 +145,12 @@
 				E7D8DC151CC92E87004348A3 /* ScheduleViewController.swift */,
 				E767F3001CCA6DFF0053E386 /* ClassInfoViewController.swift */,
 				E7FB3BDB1CCA6C050093AB8C /* TimesViewController.swift */,
+				E7FBF1E11CBFEB19000DC253 /* TeacherConference.xcdatamodeld */,
 				E755F89D1CD3AFCD00986ACD /* EndViewController.swift */,
 				E7FBF1DE1CBFEB19000DC253 /* Main.storyboard */,
 				E7FBF1E41CBFEB19000DC253 /* Assets.xcassets */,
 				E7FBF1E61CBFEB19000DC253 /* LaunchScreen.storyboard */,
 				E7FBF1E91CBFEB19000DC253 /* Info.plist */,
-				E7FBF1E11CBFEB19000DC253 /* TeacherConference.xcdatamodeld */,
 			);
 			path = TeacherConference;
 			sourceTree = "<group>";
@@ -155,6 +173,15 @@
 			path = TeacherConferenceUITests;
 			sourceTree = "<group>";
 		};
+		F0C1F8C33734AF5B29EFEE35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B31C7FFA8F071B2CAC498FA0 /* Pods-TeacherConference.debug.xcconfig */,
+				CE3D6B53D0D81C4B0926AA43 /* Pods-TeacherConference.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7FBF2021CBFEB19000DC253 /* Build configuration list for PBXNativeTarget "TeacherConference" */;
 			buildPhases = (
+				2C04BFDFE747281F25300291 /* Check Pods Manifest.lock */,
 				E7FBF1D31CBFEB19000DC253 /* Sources */,
 				E7FBF1D41CBFEB19000DC253 /* Frameworks */,
 				E7FBF1D51CBFEB19000DC253 /* Resources */,
+				E4AE3B6515ED07C58506A657 /* Embed Pods Frameworks */,
+				79A23EA36B58F067AF224678 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,7 +253,7 @@
 				TargetAttributes = {
 					E7FBF1D61CBFEB19000DC253 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 4BD2832G2G;
+						DevelopmentTeam = U4YAT939D4;
 					};
 					E7FBF1ED1CBFEB19000DC253 = {
 						CreatedOnToolsVersion = 7.3;
@@ -284,6 +314,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C04BFDFE747281F25300291 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79A23EA36B58F067AF224678 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeacherConference/Pods-TeacherConference-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4AE3B6515ED07C58506A657 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeacherConference/Pods-TeacherConference-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7FBF1D31CBFEB19000DC253 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -300,6 +378,7 @@
 				E7FBF1E31CBFEB19000DC253 /* TeacherConference.xcdatamodeld in Sources */,
 				E7FB3C641CD10A2C0021426B /* Classes.swift in Sources */,
 				E7FBF1DB1CBFEB19000DC253 /* AppDelegate.swift in Sources */,
+				E74E5E321CDCE9E7008FA27A /* DataBaseController.swift in Sources */,
 				E755F89C1CD3AB3000986ACD /* Times.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,9 +521,12 @@
 		};
 		E7FBF2031CBFEB19000DC253 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B31C7FFA8F071B2CAC498FA0 /* Pods-TeacherConference.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TeacherConference/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JHHS.TeacherConference;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -453,9 +535,12 @@
 		};
 		E7FBF2041CBFEB19000DC253 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE3D6B53D0D81C4B0926AA43 /* Pods-TeacherConference.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TeacherConference/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JHHS.TeacherConference;
 				PRODUCT_NAME = "$(TARGET_NAME)";

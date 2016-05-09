@@ -16,9 +16,14 @@ class ClassInfoViewController: UIViewController {
     var classInfo = Classes()
     
     
+    @IBOutlet weak var teacherNameLabel: UILabel!
+    @IBOutlet weak var courseNameLabel: UILabel!
+    @IBOutlet weak var schoolLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        teacherNameLabel.text = "Teacher's name: \(teacherInfo3.teacherName)"
+        courseNameLabel.text = "Course: \(classInfo.class1)"
+        schoolLabel.text = "School: \(teacherInfo3.teacherSchool)"
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
