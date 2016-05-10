@@ -505,6 +505,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Print" id="TdT-MR-9ev">
+                            <connections>
+                                <action selector="printData:" destination="idU-0z-LnY" id="tfF-M6-pWZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="courseTextField" destination="Acs-uh-iZ8" id="kDx-5r-N2r"/>
