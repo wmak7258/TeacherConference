@@ -24,11 +24,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
     }
     
     @IBAction func goToNextViewController(sender: UIButton) {
-    studentInfo.name = studentNameTextField.text!
+    studentInfo.firstName = studentNameTextField.text!
     parentInfo.parentName = parentNameTextField.text!
     parentInfo.parentEmail = emailTextField.text!
     print(parentInfo.parentPhoneNumber)
