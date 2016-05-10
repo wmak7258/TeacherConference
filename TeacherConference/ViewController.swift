@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var teacherInfo = Teacher()
 
 
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var studentNameTextField: UITextField!
     @IBOutlet weak var studentIdentificationTextField: UITextField!
     @IBOutlet weak var parentNameTextField: UITextField!
