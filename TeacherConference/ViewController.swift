@@ -32,10 +32,7 @@ class ViewController: UIViewController {
                     
                     for table in results as NSArray {
                         for row in table as! NSArray {
-                            for column in row as! NSDictionary {
-                                self.studentInfo.name = column.key as! String
-                                print(self.studentInfo.name)
-                            }
+                            
                         }
                     }
                     
