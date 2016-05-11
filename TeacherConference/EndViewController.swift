@@ -82,8 +82,17 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
                 } else {
                     self.showSendMailErrorAlert()
                 }            })
-            alert.addAction(emailMeAction)
+            let emailBothAction = UIAlertAction(title: "To both", style: .Default, handler: {
+                action in
+                let mailComposeViewController = self.configuredMailComposeViewController3()
+                if MFMailComposeViewController.canSendMail() {
+                    self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+                } else {
+                    self.showSendMailErrorAlert()
+                }            })
             alert.addAction(emailTeacherAction)
+            alert.addAction(emailMeAction)
+            alert.addAction(emailBothAction)
             alert.addAction(cancelAction)
             self.presentViewController(alert, animated: true, completion: nil)
         })
@@ -107,6 +116,16 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
         mailComposerVC.setToRecipients([parentInfo5.parentEmail])
         mailComposerVC.setSubject("Conference scheduled")
         mailComposerVC.setMessageBody("You, \(parentInfo5.parentName) have scheduled a conference at \(timeInfo.time) for \(studentInfo5.name)'s \(classInfo.class1) with \(teacherInfo5.teacherName). For more ways to contact \(teacherInfo5.teacherName) his/her email is \(teacherInfo5.teacherEmail).", isHTML: false)
+        
+        return mailComposerVC
+    }
+    func configuredMailComposeViewController3() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients([parentInfo5.parentEmail])
+        mailComposerVC.setToRecipients([teacherInfo5.teacherEmail])
+        mailComposerVC.setSubject("Conference scheduled")
+        mailComposerVC.setMessageBody("\(parentInfo5.parentName) has scheduled a conference at \(timeInfo.time) for \(studentInfo5.name)'s \(classInfo.class1).", isHTML: false)
         
         return mailComposerVC
     }
