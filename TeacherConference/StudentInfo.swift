@@ -9,19 +9,25 @@
 import Foundation
 
 class Student{
-    var name: String
+    var firstName: String
+    var lastName: String
     var grade: Int
     var ID: Int
+    var password: String
     
-    init(Name n:String, Grade g:Int, ID i:Int){
-        name = n
+    init(Grade g:Int, ID i:Int, First f: String, Last l: String, Password p: String){
+        firstName = f
+        lastName = l
         grade = g
         ID = i
+        password = p
     }
     
     init(){
-        name = ""
+        firstName = ""
+        lastName = ""
         grade = 0
         ID = 0
+        password = ""
     }
 }
