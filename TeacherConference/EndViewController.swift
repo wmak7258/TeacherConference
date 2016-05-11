@@ -124,7 +124,7 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
         mailComposerVC.setToRecipients([parentInfo5.parentEmail])
         mailComposerVC.setToRecipients([teacherInfo5.teacherEmail])
         mailComposerVC.setSubject("Conference scheduled")
-        mailComposerVC.setMessageBody("\(parentInfo5.parentName) has scheduled a conference at \(timeInfo.time) for \(studentInfo5.name)'s \(classInfo.class1).", isHTML: false)
+        mailComposerVC.setMessageBody("\(parentInfo5.parentName) has scheduled a conference at \(timeInfo.time) for \(studentInfo5.firstName)'s \(classInfo.class1).", isHTML: false)
         
         return mailComposerVC
     }
