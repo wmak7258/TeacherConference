@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import SQLClient
 
 
 class DataBaseController: UIViewController {
 
-    var client = SQLClient()
     override func viewDidLoad() {
         super.viewDidLoad()
 
