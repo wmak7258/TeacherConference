@@ -27,12 +27,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
-                self.client.execute("SELECT first_name, last_name FROM students") {
+                self.client.execute("SELECT * FROM students Where studentPK = '\(self.studentIdentificationTextField))' ") {
                     results in
                     
                     for table in results as NSArray {
                         for row in table as! NSArray {
-                            
+                            for column in row as! NSDictionary {
+                                print(column)
+                            }
                         }
                     }
                     
