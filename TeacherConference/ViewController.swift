@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import SQLClient
 
 class ViewController: UIViewController {
 
     var studentInfo = Student()
     var parentInfo = Parent()
     var teacherInfo = Teacher()
-
+    var client = SQLClient()
 
     @IBOutlet weak var studentNameTextField: UITextField!
     @IBOutlet weak var studentIdentificationTextField: UITextField!
@@ -24,7 +25,24 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+            if connect {
+                self.client.execute("SELECT * FROM students Where studentPK = '\(self.studentIdentificationTextField))' ") {
+                    results in
+                    
+                    for table in results as NSArray {
+                        for row in table as! NSArray {
+                            for column in row as! NSDictionary {
+                                print(column)
+                            }
+                        }
+                    }
+                    
+                    self.client.disconnect()
+                }
+            }
+        }
+
     }
     
     @IBAction func goToNextViewController(sender: UIButton) {
