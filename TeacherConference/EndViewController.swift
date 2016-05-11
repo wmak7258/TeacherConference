@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import MessageUI
-import EventKit
+
 class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
     var studentInfo5 = Student()
     var parentInfo5 = Parent()
@@ -61,7 +61,7 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
         let okAction = UIAlertAction(title: "Yes", style: .Default, handler: {
             action in
             
-            let alert = UIAlertController(title: "Email", message: "Do you want to send an email?", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Email", message: "Do you want to send an email to the teacher?", preferredStyle: .Alert)
             let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: {
                 action in
             })
@@ -105,7 +105,7 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
         mailComposerVC.mailComposeDelegate = self
         mailComposerVC.setToRecipients([parentInfo5.parentEmail])
         mailComposerVC.setSubject("Conference scheduled")
-        mailComposerVC.setMessageBody("You, \(parentInfo5.parentName) have scheduled a conference at \(timeInfo.time) for \(studentInfo5.name)'s \(classInfo.class1) with \(teacherInfo5.teacherName). For more ways to contact \(teacherInfo5.teacherName) his/her email is \(teacherInfo5.teacherEmail).", isHTML: false)
+        mailComposerVC.setMessageBody("You, \(parentInfo5.parentName) have scheduled a conference at \(timeInfo.time) for \(studentInfo5.firstName + studentInfo5.lastName)'s \(classInfo.class1) with \(teacherInfo5.teacherName). For more ways to contact \(teacherInfo5.teacherName) his/her email is \(teacherInfo5.teacherEmail).", isHTML: false)
         
         return mailComposerVC
     }
@@ -119,7 +119,12 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
         sendMailErrorAlert.addAction(cancelAction)
         self.presentViewController(sendMailErrorAlert, animated: true, completion: nil)
     }
-    func eventStoresdfg() {
-
+    
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+        
     }
+
+
 }
