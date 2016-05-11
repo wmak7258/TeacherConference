@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import SQLClient
 
 class ViewController: UIViewController {
 
     var studentInfo = Student()
     var parentInfo = Parent()
     var teacherInfo = Teacher()
-
+    var client = SQLClient()
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var studentNameTextField: UITextField!
