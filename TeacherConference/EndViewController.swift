@@ -25,21 +25,21 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
     @IBOutlet weak var courseTextField: UILabel!
     @IBOutlet weak var timeTextField: UILabel!
     @IBAction func printData(sender: UIBarButtonItem) {
-        //let fileData = "\(studentNameTextField.text) \(parentNameTextField.text) \(parentEmailTextField.text) \(teacherNameTextField.text) \(teacherEmailTextField.text) \(courseTextField.text) \(timeTextField.text)"
-        //if UIPrintInteractionController.canPrintURL(fileData!) {
-        // let printJob = UIPrintInfo(dictionary: nil)
-        //  printJob.jobName = fileData!.lastPathComponent
-        //  printJob.outputType = .Photo
+        var fileData = "\(studentNameTextField.text) \(parentNameTextField.text) \(parentEmailTextField.text) \(teacherNameTextField.text) \(teacherEmailTextField.text) \(courseTextField.text) \(timeTextField.text)"
+        if UIPrintInteractionController.canPrintData(fileData) {
+         let printJob = UIPrintInfo(dictionary: nil)
+         printJob.jobName = fileData.lastPathComponent
+         printJob.outputType = .General
         
-        //   let printController = UIPrintInteractionController.sharedPrintController()!
-        //   printController.printInfo = printJob
-        //   printController.showsNumberOfCopies = false
+          let printController = UIPrintInteractionController.sharedPrintController()
+          printController.printInfo = printJob
+          printController.showsNumberOfCopies = false
         
-        //   printController.printingItem = fileData
+          printController.printingItem = fileData
         
-        //   printController.presentAnimated(true, completionHandler: nil)
+          printController.presentAnimated(true, completionHandler: nil)
     }
-
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
