@@ -1,7 +1,7 @@
 //  Brandon Perkins
 //  ViewController.swift
 //  TeacherConference
-//  
+//
 //  Created by student1 on 4/14/16.
 //  Copyright © 2016 John Hersey High school. All rights reserved.
 //
@@ -9,32 +9,46 @@
 import UIKit
 import SQLClient
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController  {
+    
     var studentInfo = Student()
     var parentInfo = Parent()
     var teacherInfo = Teacher()
     var client = SQLClient()
-
+    
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var studentNameTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var studentIdentificationTextField: UITextField!
     @IBOutlet weak var parentNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+            
     }
-    
-    @IBAction func goToNextViewController(sender: UIButton) {
-    studentInfo.firstName = studentNameTextField.text!
-    parentInfo.parentName = parentNameTextField.text!
-    parentInfo.parentEmail = emailTextField.text!
-    print(parentInfo.parentPhoneNumber)
-    parentInfo.parentPhoneNumber = Int(phoneNumberTextField.text!)!
-    print(parentInfo.parentPhoneNumber)
+    @IBAction func ToNextViewController(sender: UIButton) {
+        
+        client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+            if connect {
+                self.client.execute("SELECT * FROM students Where studentPK = '\(self.studentIdentificationTextField.text!)' ") {
+                    results in
+
+                    for table in results as NSArray {
+                        for row in table as! NSArray {
+                           print(row)
+                        }
+                    }
+                    self.client.disconnect()
+                }
+            }
+        }
+        
+        
+        
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ScheduleViewController
@@ -42,5 +56,5 @@ class ViewController: UIViewController {
         NVC.parentInfo2 = parentInfo
         NVC.teacherInfo2 = teacherInfo
     }
-
+    
 }
