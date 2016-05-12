@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import SQLClient
 
 class ViewController: UIViewController {
 
     var studentInfo = Student()
     var parentInfo = Parent()
     var teacherInfo = Teacher()
+    var client = SQLClient()
 
-
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var studentNameTextField: UITextField!
     @IBOutlet weak var studentIdentificationTextField: UITextField!
     @IBOutlet weak var parentNameTextField: UITextField!
@@ -24,11 +26,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
     }
     
     @IBAction func goToNextViewController(sender: UIButton) {
-    studentInfo.name = studentNameTextField.text!
+    studentInfo.firstName = studentNameTextField.text!
     parentInfo.parentName = parentNameTextField.text!
     parentInfo.parentEmail = emailTextField.text!
     print(parentInfo.parentPhoneNumber)
