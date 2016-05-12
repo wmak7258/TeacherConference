@@ -16,38 +16,39 @@ class ViewController: UIViewController  {
     var teacherInfo = Teacher()
     var client = SQLClient()
     
-    @IBOutlet weak var studentNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var studentIdentificationTextField: UITextField!
     @IBOutlet weak var parentNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
     }
-    
-    @IBAction func goToNextViewController(sender: UIButton) {
+    @IBAction func ToNextViewController(sender: UIButton) {
         
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
                 self.client.execute("SELECT * FROM students Where studentPK = '\(self.studentIdentificationTextField.text!)' ") {
                     results in
+
                     for table in results as NSArray {
                         for row in table as! NSArray {
-                           row.objectForKey("first_name")!
-                           row.objectForKey("last_name")!
+                           print(row)
                         }
                     }
                     self.client.disconnect()
                 }
             }
         }
-        studentInfo.name = studentNameTextField.text!
-        parentInfo.parentName = parentNameTextField.text!
-        parentInfo.parentEmail = emailTextField.text!
-        parentInfo.parentPhoneNumber = Int(phoneNumberTextField.text!)!
+        
+        
+        
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ScheduleViewController
