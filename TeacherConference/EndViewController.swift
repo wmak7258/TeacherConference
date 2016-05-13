@@ -81,7 +81,7 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
                 } else {
                     self.showSendMailErrorAlert()
                 }            })
-            let emailBothAction = UIAlertAction(title: "To both", style: .Default, handler: {
+            let emailBothAction = UIAlertAction(title: "To Both", style: .Default, handler: {
                 action in
                 let mailComposeViewController = self.configuredMailComposeViewController3()
                 if MFMailComposeViewController.canSendMail() {

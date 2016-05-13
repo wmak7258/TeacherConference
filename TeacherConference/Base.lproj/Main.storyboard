@@ -133,7 +133,6 @@
                                 <state key="normal" title="Sign in"/>
                                 <connections>
                                     <action selector="ToNextViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t8w-Cp-ism"/>
-                                    <segue destination="cv1-fg-UGn" kind="show" id="PwD-hb-NyO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you need to schedule on a different" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsj-5d-hMa">
@@ -245,6 +244,7 @@
                         <outlet property="phoneNumberTextField" destination="X8q-jl-haB" id="ktq-mH-13F"/>
                         <outlet property="signInButton" destination="goD-4M-QGc" id="87z-bP-5ST"/>
                         <outlet property="studentIdentificationTextField" destination="lxK-f5-fZn" id="eDw-bZ-XAf"/>
+                        <segue destination="cv1-fg-UGn" kind="show" identifier="schedule" id="lhA-lv-fCi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -291,7 +291,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="f4V-Ob-NEx" kind="show" id="nG0-nj-6mf"/>
+                                            <segue destination="f4V-Ob-NEx" kind="show" id="5Px-JY-N1R"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -557,7 +557,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kei-oM-VbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="435" y="349"/>
+            <point key="canvasLocation" x="475" y="137"/>
         </scene>
     </scenes>
 </document>
