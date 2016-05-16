@@ -133,7 +133,6 @@
                                 <state key="normal" title="Sign in"/>
                                 <connections>
                                     <action selector="ToNextViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t8w-Cp-ism"/>
-                                    <segue destination="cv1-fg-UGn" kind="show" id="PwD-hb-NyO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you need to schedule on a different" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsj-5d-hMa">
@@ -245,6 +244,7 @@
                         <outlet property="phoneNumberTextField" destination="X8q-jl-haB" id="ktq-mH-13F"/>
                         <outlet property="signInButton" destination="goD-4M-QGc" id="87z-bP-5ST"/>
                         <outlet property="studentIdentificationTextField" destination="lxK-f5-fZn" id="eDw-bZ-XAf"/>
+                        <segue destination="cv1-fg-UGn" kind="show" identifier="schedule" id="lhA-lv-fCi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -291,7 +291,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="f4V-Ob-NEx" kind="show" id="nG0-nj-6mf"/>
+                                            <segue destination="f4V-Ob-NEx" kind="show" id="5Px-JY-N1R"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -363,6 +363,49 @@
             </objects>
             <point key="canvasLocation" x="2872" y="349"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Y58-Bh-ul5">
+            <objects>
+                <viewController id="8G1-mN-VMq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pou-C3-8eg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fp3-Il-5Gb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5hX-Mk-SCa">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-EL-oL1">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <items>
+                                    <navigationItem title="Your scheduled times" id="6Xy-7E-Ajt">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="0um-4Q-PLC"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qhw-Vf-4H0">
+                                <rect key="frame" x="0.0" y="44" width="768" height="980"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="Nze-7i-JAL">
+                                        <rect key="frame" x="0.0" y="28" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nze-7i-JAL" id="oms-oI-Do5">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0o3-xi-yYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3673" y="-734"/>
+        </scene>
         <!--Times View Controller-->
         <scene sceneID="oRB-hZ-A12">
             <objects>
@@ -403,7 +446,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="idU-0z-LnY" kind="show" id="oOf-JY-3by"/>
+                                            <segue destination="idU-0z-LnY" kind="show" identifier="toDone" id="oOf-JY-3by"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -415,6 +458,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="trash" id="V7z-2y-wH5">
+                            <connections>
+                                <segue destination="8G1-mN-VMq" kind="presentation" identifier="toDelete" id="Abd-Dj-wZ7"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="myTableView" destination="tGw-Ee-ujl" id="2Xj-jj-Xkg"/>
@@ -557,7 +608,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kei-oM-VbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="435" y="349"/>
+            <point key="canvasLocation" x="475" y="137"/>
         </scene>
     </scenes>
 </document>
