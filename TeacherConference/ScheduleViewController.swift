@@ -59,6 +59,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return currentCell
     }
+        
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ClassInfoViewController
         let currentRow = myTableView.indexPathForSelectedRow?.row
