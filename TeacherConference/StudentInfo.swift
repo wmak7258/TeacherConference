@@ -14,13 +14,15 @@ class Student{
     var grade: Int
     var ID: Int
     var password: String
+    var email: String
     
-    init(Grade g:Int, ID i:Int, First f: String, Last l: String, Password p: String){
+    init(Grade g:Int, ID i:Int, First f: String, Last l: String, Password p: String, Email e: String){
         firstName = f
         lastName = l
         grade = g
         ID = i
         password = p
+        email = e
     }
     
     init(){
@@ -29,5 +31,6 @@ class Student{
         grade = 0
         ID = 0
         password = ""
+        email = ""
     }
 }
