@@ -7,33 +7,39 @@
 //
 
 import UIKit
+import SQLClient
 
 class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     var studentInfo4 = Student()
     var parentInfo4 = Parent()
     var teacherInfo4 = Teacher()
     var timeInformation = Time()
     var classInfo = Classes()
+    var client = SQLClient()
+    var connects = true
+
     
     @IBOutlet weak var myTableView: UITableView!
     
     var timesArray: [Time] = [Time]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let time1 = Time(Time: "5:00", Taken: false)
         timesArray.append(time1)
         
-
+        
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let currentCell = tableView.dequeueReusableCellWithIdentifier("timeCell")!
         let currentTime = timesArray[indexPath.row]
         currentCell.textLabel!.text = currentTime.time
         if currentTime.taken == false{
-        currentCell.detailTextLabel?.text = "Open"
+            currentCell.detailTextLabel?.text = "Open"
         }else{
-        currentCell.detailTextLabel?.text = "Taken"
+            currentCell.detailTextLabel?.text = "Taken"
         }
         return currentCell
     }
@@ -41,38 +47,62 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timesArray.count
     }
-  
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toDone"{
-        let NVC = segue.destinationViewController as! EndViewController
-        let currentRow = myTableView.indexPathForSelectedRow?.row
-        NVC.studentInfo5 = studentInfo4
-        NVC.parentInfo5 = parentInfo4
-        NVC.teacherInfo5 = teacherInfo4
-        NVC.timeInfo = timesArray[currentRow!]
-        NVC.classInfo = classInfo
-        if timesArray[currentRow!].taken == true{
-            let alert = UIAlertController(title: "That time slot is filled", message: "You may not book that time", preferredStyle: .Alert)
-            let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: {
-                action in
-                print("Dismiss was pressed")
-            })
-            alert.addAction(cancelAction)
-            self.presentViewController(alert, animated: true, completion: nil)
-        }else if segue.identifier == "toDelete"{
-            let NVC = segue.destinationViewController as! DeleteViewController
+            let NVC = segue.destinationViewController as! EndViewController
             let currentRow = myTableView.indexPathForSelectedRow?.row
             NVC.studentInfo5 = studentInfo4
             NVC.parentInfo5 = parentInfo4
             NVC.teacherInfo5 = teacherInfo4
             NVC.timeInfo = timesArray[currentRow!]
             NVC.classInfo = classInfo
-
-        }
+            if timesArray[currentRow!].taken == true{
+                let alert = UIAlertController(title: "That time slot is filled", message: "You may not book that time", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: {
+                    action in
+                    print("Dismiss was pressed")
+                })
+                alert.addAction(cancelAction)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }else if segue.identifier == "toDelete"{
+                let NVC = segue.destinationViewController as! DeleteViewController
+                let currentRow = myTableView.indexPathForSelectedRow?.row
+                NVC.studentInfo5 = studentInfo4
+                NVC.parentInfo5 = parentInfo4
+                NVC.teacherInfo5 = teacherInfo4
+                NVC.timeInfo = timesArray[currentRow!]
+                NVC.classInfo = classInfo
+                
+            }
             
         }
         
         
     }
-
+    func query(){
+        client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+            if connect {
+                self.client.execute("SELECT * FROM conference_schedule Where teacherPk = \(self.teacherInfo4.teacherID) ") {
+                    results in
+                    if results != nil {
+                        self.connects = true
+                        for table in results as NSArray {
+                            for row in table as! NSArray {
+                                //self.studentInfo.firstName = row.objectForKey("first_name") as! String
+                                //self.studentInfo.lastName = row.objectForKey("last_name") as! String
+                                print(row)
+                            }
+                        }
+                        self.client.disconnect()
+                    }
+                    else  {
+                        self.connects = false
+                    }
+                }
+            }
+        }
+        
+    }
+    
 }
