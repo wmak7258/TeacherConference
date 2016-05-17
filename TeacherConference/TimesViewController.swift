@@ -16,13 +16,14 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var teacherInfo4 = Teacher()
     var timeInformation = Time()
     var classInfo = Classes()
+    var client = SQLClient()
     
     @IBOutlet weak var myTableView: UITableView!
     
     var timesArray: [Time] = [Time]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let time1 = Time(Time: "5:00", Taken: false)
+        let time1 = Time(Time: "5:00", Taken: false, Hour: 0)
         timesArray.append(time1)
         
         
@@ -37,7 +38,6 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             currentCell.detailTextLabel?.text = "Taken"
         }
         return currentCell
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
