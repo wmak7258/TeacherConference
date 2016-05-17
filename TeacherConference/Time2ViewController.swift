@@ -20,7 +20,7 @@ class Time2ViewController: UIViewController {
 
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let NVC = segue.destinationViewController as EndViewController
+        let NVC = segue.destinationViewController as! EndViewController
         
     }
 }
