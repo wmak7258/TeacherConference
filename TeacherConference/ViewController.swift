@@ -44,7 +44,6 @@ class ViewController: UIViewController  {
                             self.studentInfo.lastName = row.objectForKey("last_name") as! String
                             self.studentInfo.password = row.objectForKey("password") as! String
                             self.studentInfo.email = row.objectForKey("email_ID") as! String
-                            self.studentInfo.ID = row.objectForKey("studentPK") as! Int
                             print(self.studentInfo.firstName)
                             if self.studentIdentificationTextField.text == "" {
                                 self.presentAlert()
@@ -89,10 +88,8 @@ class ViewController: UIViewController  {
                             }
                         }
                         
-
-
-                    self.client.disconnect()
-                }
+                        self.client.disconnect()
+                    }
                 }
             }
         }
@@ -115,7 +112,7 @@ class ViewController: UIViewController  {
         parentNameTextField.text = ""
         emailTextField.text = ""
         phoneNumberTextField.text = ""
-
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -124,5 +121,5 @@ class ViewController: UIViewController  {
         NVC.parentInfo2 = parentInfo
         NVC.teacherInfo2 = teacherInfo
     }
-
+    
 }
