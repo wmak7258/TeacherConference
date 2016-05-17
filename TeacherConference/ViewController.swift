@@ -15,7 +15,7 @@ class ViewController: UIViewController  {
     var parentInfo = Parent()
     var teacherInfo = Teacher()
     var client = SQLClient()
-    var connects = true
+    var connects = false
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -37,39 +37,92 @@ class ViewController: UIViewController  {
             if connect {
                 self.client.execute("SELECT * FROM students Where studentPK = '\(self.studentIdentificationTextField.text!)' ") {
                     results in
-                    if results != nil {
-                        self.connects = true
-                        for table in results as NSArray {
-                            for row in table as! NSArray {
-                                self.studentInfo.firstName = row.objectForKey("first_name") as! String
-                                self.studentInfo.lastName = row.objectForKey("last_name") as! String
-                                print(row)
+                    print(results)
+                    for table in results as NSArray {
+                        for row in table as! NSArray {
+                            self.studentInfo.firstName = row.objectForKey("first_name") as! String
+                            self.studentInfo.lastName = row.objectForKey("last_name") as! String
+                            self.studentInfo.password = row.objectForKey("password") as! String
+                            self.studentInfo.email = row.objectForKey("email_ID") as! String
+                            self.studentInfo.ID = row.objectForKey("studentPK") as! Int
+                            print(self.studentInfo.firstName)
+                            if self.studentIdentificationTextField.text == "" {
+                                self.presentAlert()
+                                self.clearTextFields()
+                            }
+                            if self.firstNameTextField.text == self.studentInfo.firstName {
+                                self.connects = true
+                            } else {
+                                self.presentAlert()
+                                self.clearTextFields()
+                            }
+                            if self.lastNameTextField.text == self.studentInfo.lastName {
+                                self.connects = true
+                            } else {
+                                self.presentAlert()
+                                self.clearTextFields()
+                            }
+                            if self.passwordTextField.text == self.studentInfo.password {
+                                self.connects = true
+                            } else {
+                                self.presentAlert()
+                                self.clearTextFields()
+                            }
+                            if self.emailTextField.text == self.studentInfo.email {
+                                self.connects = true
+                            } else {
+                                self.presentAlert()
+                                self.clearTextFields()
+                            }
+                            if self.connects == true {
+                                self.performSegueWithIdentifier("schedule", sender: nil)
                             }
                         }
-                        self.client.disconnect()
                     }
-                    else  {
-                        self.connects = false
-                    }
+                    self.client.execute("SELECT * FROM students_courses Where studentPk = '\(self.studentIdentificationTextField.text!)' ") {
+                        results in
+                        
+                        for table in results as NSArray {
+                            for row in table as! NSArray {
+                                print(row.objectForKey("course_id") as! String)
+                                print(row.objectForKey("course_title") as! String)
+                            }
+                        }
+                        
+
+
+                    self.client.disconnect()
+                }
                 }
             }
         }
-        button()
     }
+    
+    func presentAlert()
+    {
+        let alert = UIAlertController(title: "Error", message: "User not found please check the information you enter", preferredStyle: .Alert)
+        let retry = UIAlertAction(title: "Retry", style: UIAlertActionStyle.Cancel, handler: nil)
+        alert.addAction(retry)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func clearTextFields()
+    {
+        passwordTextField.text = ""
+        firstNameTextField.text = ""
+        lastNameTextField.text = ""
+        studentIdentificationTextField.text = ""
+        parentNameTextField.text = ""
+        emailTextField.text = ""
+        phoneNumberTextField.text = ""
+
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ScheduleViewController
         NVC.studentInfo2 = studentInfo
         NVC.parentInfo2 = parentInfo
         NVC.teacherInfo2 = teacherInfo
     }
-    func button() {
-        if connects == false {
-            let alert = UIAlertController(title: "Error", message: "User not found please check the information you enter", preferredStyle: .Alert)
-            let retry = UIAlertAction(title: "Retry", style: UIAlertActionStyle.Cancel, handler: nil)
-            alert.addAction(retry.copy() as! UIAlertAction)
-            self.presentViewController(alert, animated: true, completion: nil)
-        } else {
-            self.performSegueWithIdentifier("schedule", sender: nil)
-        }
-    }
+
 }

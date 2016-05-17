@@ -40,8 +40,6 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         classArray.append(class7)
         let class8 = Classes(class1: "qwsxcf", teacher: "ujm")
         classArray.append(class8)
-        
-        
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classArray.count
@@ -55,6 +53,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return currentCell
     }
+        
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ClassInfoViewController
         let currentRow = myTableView.indexPathForSelectedRow?.row
