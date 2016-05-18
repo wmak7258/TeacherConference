@@ -50,7 +50,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toDone"{
-            let NVC = segue.destinationViewController as! EndViewController
+            let NVC = segue.destinationViewController as! Time2ViewController
             let currentRow = myTableView.indexPathForSelectedRow?.row
             NVC.studentInfo5 = studentInfo4
             NVC.parentInfo5 = parentInfo4
