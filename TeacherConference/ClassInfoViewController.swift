@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SQLClient
 
 class ClassInfoViewController: UIViewController {
-
+    var client = SQLClient()
     var studentInfo3 = Student()
     var parentInfo3 = Parent()
     var teacherInfo3 = Teacher()
@@ -21,17 +22,38 @@ class ClassInfoViewController: UIViewController {
     @IBOutlet weak var schoolLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        teacherNameLabel.text = "Teacher's name: \(teacherInfo3.teacherName)"
-        courseNameLabel.text = "Course: \(classInfo.class1)"
-        schoolLabel.text = "School: \(teacherInfo3.teacherSchool)"
+        
+        client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+            if connect {
+                self.client.execute("SELECT * FROM Teacher ") {
+                    results in
+                    print(results)
+                    for table in results as NSArray {
+                        for row in table as! NSArray {
+                            self.teacherInfo3.teacherName = row.objectForKey("teacher_name") as! String
+                            self.teacherInfo3.classes = row.objectForKey("teacher") as! String
+                            self.teacherInfo3.teacherSchool = row.objectForKey("schoolPK") as! String
+                            
+                            self.teacherNameLabel.text = "Teacher's name: \(self.teacherInfo3.teacherName)"
+                            self.courseNameLabel.text = "Course: \(self.classInfo.class1)"
+                            self.schoolLabel.text = "School: \(self.teacherInfo3.teacherSchool)"
+                        }
+                    }
+                    
+                    
+                    
+                    
+                    
+                }
+            }
+        }
     }
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! TimesViewController
-        NVC.studentInfo4 = studentInfo3
-        NVC.parentInfo4 = parentInfo3
-        NVC.teacherInfo4 = teacherInfo3
-        NVC.classInfo = classInfo
+        NVC.studentInfo4 = self.studentInfo3
+        NVC.parentInfo4 = self.parentInfo3
+        NVC.teacherInfo4 = self.teacherInfo3
+        NVC.classInfo = self.classInfo
     }
-    
+
 }
