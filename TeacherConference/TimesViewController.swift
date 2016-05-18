@@ -89,7 +89,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.connects = true
                         for table in results as NSArray {
                             for row in table as! NSArray {
-                                //self.studentInfo.firstName = row.objectForKey("first_name") as! String
+                                self.timeInformation.time = row.objectForKey("On ... from ... to time_complete") as! String
                                 //self.studentInfo.lastName = row.objectForKey("last_name") as! String
                                 print(row)
                             }
