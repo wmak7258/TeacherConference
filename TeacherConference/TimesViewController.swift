@@ -24,6 +24,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var timesArray: [Time] = [Time]()
     
+    var hourArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +42,13 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }else{
             currentCell.detailTextLabel?.text = "Taken"
         }
+        //let currentTime = hourArray[indexPath.row]
+        //currentCell.textLabel!.text = currentTime
         return currentCell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timesArray.count
+        return hourArray.count
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -83,13 +86,14 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func query(){
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
-                self.client.execute("SELECT * FROM conference_schedule Where teacherPk = \(self.teacherInfo4.teacherID) ") {
+                self.client.execute("SELECT * FROM conference_schedule Where teacherPk = 90599099") {
                     results in
                     if results != nil {
                         self.connects = true
                         for table in results as NSArray {
                             for row in table as! NSArray {
-                                self.timeInformation.time = row.objectForKey("On ... from ... to time_complete") as! String
+                                self.timeInformation.time = row.objectForKey("time_complete") as! String
+                                //self.hourArray.append(self.timeInformation.time)
                                 //self.studentInfo.lastName = row.objectForKey("last_name") as! String
                                 print(row)
                             }
