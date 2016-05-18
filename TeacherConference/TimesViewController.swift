@@ -17,10 +17,14 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var timeInformation = Time()
     var classInfo = Classes()
     var client = SQLClient()
+    var connects = true
+
     
     @IBOutlet weak var myTableView: UITableView!
     
     var timesArray: [Time] = [Time]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let time1 = Time(Time: "5:00", Taken: false, Hour: 0)
@@ -74,6 +78,30 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
         
+        
+    }
+    func query(){
+        client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+            if connect {
+                self.client.execute("SELECT * FROM conference_schedule Where teacherPk = \(self.teacherInfo4.teacherID) ") {
+                    results in
+                    if results != nil {
+                        self.connects = true
+                        for table in results as NSArray {
+                            for row in table as! NSArray {
+                                self.timeInformation.time = row.objectForKey("On ... from ... to time_complete") as! String
+                                //self.studentInfo.lastName = row.objectForKey("last_name") as! String
+                                print(row)
+                            }
+                        }
+                        self.client.disconnect()
+                    }
+                    else  {
+                        self.connects = false
+                    }
+                }
+            }
+        }
         
     }
     
