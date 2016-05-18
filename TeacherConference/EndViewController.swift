@@ -11,9 +11,9 @@ import UIKit
 import MessageUI
 
 class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
-    var studentInfo5 = Student()
-    var parentInfo5 = Parent()
-    var teacherInfo5 = Teacher()
+    var studentInfo6 = Student()
+    var parentInfo6 = Parent()
+    var teacherInfo6 = Teacher()
     var timeInfo = Time()
     var classInfo = Classes()
     
@@ -29,11 +29,11 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        studentNameTextField.text = studentInfo5.firstName + studentInfo5.lastName
-        parentNameTextField.text = parentInfo5.parentName
-        parentEmailTextField.text = parentInfo5.parentEmail
+        studentNameTextField.text = studentInfo6.firstName + studentInfo6.lastName
+        parentNameTextField.text = parentInfo6.parentName
+        parentEmailTextField.text = parentInfo6.parentEmail
         teacherNameTextField.text = classInfo.teacher
-        teacherEmailTextField.text = teacherInfo5.teacherEmail
+        teacherEmailTextField.text = teacherInfo6.teacherEmail
         courseTextField.text = classInfo.class1
         timeTextField.text = timeInfo.time
         
@@ -89,28 +89,28 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
-        mailComposerVC.setToRecipients([teacherInfo5.teacherEmail])
-        mailComposerVC.setSubject("Sent by \(parentInfo5.parentEmail)")
-        mailComposerVC.setMessageBody("\(parentInfo5.parentName) has scheduled a conference at \(timeInfo.time) for \(studentInfo5.firstName + studentInfo5.lastName)'s \(classInfo.class1). For more ways to contact \(parentInfo5.parentName) his/her email is \(parentInfo5.parentEmail) and his/her phone number is \(parentInfo5.parentPhoneNumber).", isHTML: false)
+        mailComposerVC.setToRecipients([teacherInfo6.teacherEmail])
+        mailComposerVC.setSubject("Sent by \(parentInfo6.parentEmail)")
+        mailComposerVC.setMessageBody("\(parentInfo6.parentName) has scheduled a conference at \(timeInfo.time) for \(studentInfo6.firstName + studentInfo6.lastName)'s \(classInfo.class1). For more ways to contact \(parentInfo6.parentName) his/her email is \(parentInfo6.parentEmail) and his/her phone number is \(parentInfo6.parentPhoneNumber).", isHTML: false)
         
         return mailComposerVC
     }
     func configuredMailComposeViewController2() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
-        mailComposerVC.setToRecipients([parentInfo5.parentEmail])
+        mailComposerVC.setToRecipients([parentInfo6.parentEmail])
         mailComposerVC.setSubject("Conference scheduled")
-        mailComposerVC.setMessageBody("You, \(parentInfo5.parentName) have scheduled a conference at \(timeInfo.time) for \(studentInfo5.firstName + studentInfo5.lastName)'s \(classInfo.class1) with \(teacherInfo5.teacherName). For more ways to contact \(teacherInfo5.teacherName) his/her email is \(teacherInfo5.teacherEmail).", isHTML: false)
+        mailComposerVC.setMessageBody("You, \(parentInfo6.parentName) have scheduled a conference at \(timeInfo.time) for \(studentInfo6.firstName + studentInfo6.lastName)'s \(classInfo.class1) with \(teacherInfo6.teacherName). For more ways to contact \(teacherInfo6.teacherName) his/her email is \(teacherInfo6.teacherEmail).", isHTML: false)
         
         return mailComposerVC
     }
     func configuredMailComposeViewController3() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
-        mailComposerVC.setToRecipients([parentInfo5.parentEmail])
-        mailComposerVC.setToRecipients([teacherInfo5.teacherEmail])
+        mailComposerVC.setToRecipients([parentInfo6.parentEmail])
+        mailComposerVC.setToRecipients([teacherInfo6.teacherEmail])
         mailComposerVC.setSubject("Conference scheduled")
-        mailComposerVC.setMessageBody("\(parentInfo5.parentName) has scheduled a conference at \(timeInfo.time) for \(studentInfo5.firstName)'s \(classInfo.class1).", isHTML: false)
+        mailComposerVC.setMessageBody("\(parentInfo6.parentName) has scheduled a conference at \(timeInfo.time) for \(studentInfo6.firstName)'s \(classInfo.class1).", isHTML: false)
         
         return mailComposerVC
     }

@@ -11,12 +11,15 @@ import Foundation
 class Time{
     var time: String
     var taken: Bool
-    init(Time t: String, Taken a: Bool){
+    var hour: Int
+    init(Time t: String, Taken a: Bool, Hour h: Int){
         time = t
         taken = a
+        hour = h
     }
     init(){
         time = ""
         taken = false
+        hour = 0
     }
 }
