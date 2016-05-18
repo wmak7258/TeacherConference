@@ -67,12 +67,6 @@ class ViewController: UIViewController  {
                                 self.presentAlert()
                                 self.clearTextFields()
                             }
-                            if self.emailTextField.text == self.studentInfo.email {
-                                self.connects = true
-                            } else {
-                                self.presentAlert()
-                                self.clearTextFields()
-                            }
                             if self.connects == true {
                                 self.performSegueWithIdentifier("schedule", sender: nil)
                             }

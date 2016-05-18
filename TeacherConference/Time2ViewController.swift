@@ -21,7 +21,7 @@ class Time2ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     override func viewWillAppear(animated: Bool) {
-        self.client.execute("SELECT * FROM conference_schedule Where conferencePK = '\(timeInfo.time)' ") {
+        self.client.execute("SELECT * FROM conference_schedule Where teacher_id = '\(teacherInfo5.teacherID)' ") {
             results in
             for table in results {
                 for row in table as! NSArray{
