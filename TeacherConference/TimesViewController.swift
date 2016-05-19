@@ -28,6 +28,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let currentCell = tableView.dequeueReusableCellWithIdentifier("timeCell")!
         let currentTime = timesArray[indexPath.row]
         currentCell.textLabel!.text = currentTime.time
@@ -37,14 +38,6 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             currentCell.detailTextLabel?.text = "Taken"
         }
         return currentCell
-        client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
-            if connect {
-                self.client.execute("SELECT * FROM students Where studentPK = '\(self.teacherInfo4.teacherID)' ") {
-                    results in
-                }
-            }
-            
-            
         }
         
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,4 +77,4 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
         
-}
+    }
