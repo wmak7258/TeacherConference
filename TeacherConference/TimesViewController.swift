@@ -52,24 +52,8 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toDone"{
-            let NVC = segue.destinationViewController as! Time2ViewController
-            let currentRow = myTableView.indexPathForSelectedRow?.row
-            NVC.studentInfo5 = studentInfo4
-            NVC.parentInfo5 = parentInfo4
-            NVC.teacherInfo5 = teacherInfo4
-            NVC.timeInfo = timesArray[currentRow!]
-            NVC.classInfo = classInfo
-            if timesArray[currentRow!].taken == true{
-                let alert = UIAlertController(title: "That time slot is filled", message: "You may not book that time", preferredStyle: .Alert)
-                let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: {
-                    action in
-                    print("Dismiss was pressed")
-                })
-                alert.addAction(cancelAction)
-                self.presentViewController(alert, animated: true, completion: nil)
-            }else if segue.identifier == "toDelete"{
-                let NVC = segue.destinationViewController as! DeleteViewController
+                if segue.identifier == "toDone"{
+                let NVC = segue.destinationViewController as! EndViewController
                 let currentRow = myTableView.indexPathForSelectedRow?.row
                 NVC.studentInfo5 = studentInfo4
                 NVC.parentInfo5 = parentInfo4
@@ -100,4 +84,5 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
         
-    }
+    
+}
