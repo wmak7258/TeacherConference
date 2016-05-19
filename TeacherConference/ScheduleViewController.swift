@@ -49,8 +49,8 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         let teacherInfo :Dictionary <String,String> = ["Teacher Name": "\(teacherInfo2).teacherName)", "Class": "\(teacherInfo2.classes)", "Room Number": "\(teacherInfo2.roomNumber)", "Time": "\(teacherInfo2.time)", "Teacher E-Mail": "\(teacherInfo2.teacherEmail)", "TeacherID": "\(teacherInfo2.teacherID)", "Teacher School": "\(teacherInfo2.teacherSchool)"]
         let parent :Dictionary <String,String> = ["Parent Name": "\(parentInfo2.parentName)", "Parent E-Mail": "\(parentInfo2.parentEmail)", "Parent Phone Number": "\(parentInfo2.parentPhoneNumber)"]
         let student :Dictionary <String,String> = ["Student Name": "\(studentInfo2.firstName + studentInfo2.lastName)", "Student Grade": "\(studentInfo2.grade)", "Student ID": "\(studentInfo2.ID)"]
-        let class1 = Classes(class1: "", teacher: "RTYHGFYU")
-        classArray.append(class1)
+        let classFirst = Classes(class1: "\(classInfo.class1)", teacher: classInfo.teacher)
+        classArray.append(classFirst)
         let class2 = Classes(class1: "KJHYUHG", teacher: "JHGHBVG")
         classArray.append(class2)
         let class3 = Classes(class1: "sdfg", teacher: "sdfghj")
