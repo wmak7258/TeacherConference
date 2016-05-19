@@ -38,26 +38,33 @@ class ClassInfoViewController: UIViewController {
 
                             if self.teacherInfo3.teacherSchool == "008" {
                                 self.schoolLabel.text = "School: Buffalo Grove High School"
-                            } else {
-                            self.schoolLabel.text = "School: \(self.teacherInfo3.teacherSchool)"
+                            } else if self.teacherInfo3.teacherSchool == "002" {
+                                self.schoolLabel.text = "School: Prospect High School"
+                            } else if self.teacherInfo3.teacherSchool == "004" {
+                                self.schoolLabel.text = "School: Wheeling High School"
+                            } else if self.teacherInfo3.teacherSchool == "005" {
+                                self.schoolLabel.text = "School: Elk Grove High School"
+                            } else if self.teacherInfo3.teacherSchool == "006" {
+                                self.schoolLabel.text = "School: John Hersey High School"
+                            } else if self.teacherInfo3.teacherSchool == "007" {
+                                self.schoolLabel.text = "School: Rolling Meadows High School"
+                            }
+                                
+                            }
                             }
                         }
                     }
-                    
-                    
-                    
-                    
+        
+        
                     
                 }
-            }
-        }
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! TimesViewController
-        NVC.studentInfo4 = self.studentInfo3
-        NVC.parentInfo4 = self.parentInfo3
-        NVC.teacherInfo4 = self.teacherInfo3
-        NVC.classInfo = self.classInfo
+        NVC.studentInfo4 = studentInfo3
+        NVC.parentInfo4 = parentInfo3
+        NVC.teacherInfo4 = teacherInfo3
+        NVC.classInfo = classInfo
     }
 }
-
