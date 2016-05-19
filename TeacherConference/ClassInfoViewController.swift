@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SQLClient
 
 class ClassInfoViewController: UIViewController {
-
+    var client = SQLClient()
     var studentInfo3 = Student()
     var parentInfo3 = Parent()
     var teacherInfo3 = Teacher()
@@ -21,11 +22,44 @@ class ClassInfoViewController: UIViewController {
     @IBOutlet weak var schoolLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        teacherNameLabel.text = "Teacher's name: \(teacherInfo3.teacherName)"
-        courseNameLabel.text = "Course: \(classInfo.class1)"
-        schoolLabel.text = "School: \(teacherInfo3.teacherSchool)"
-    }
+        
+        client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+            if connect {
+                self.client.execute("SELECT * FROM Teacher ") {
+                    results in
+                    print(results)
+                    for table in results as NSArray {
+                        for row in table as! NSArray {
+                            self.teacherInfo3.teacherName = row.objectForKey("teacher_name") as! String
+                            self.teacherInfo3.teacherSchool = row.objectForKey("schoolPK") as! String
+                            
+                            self.teacherNameLabel.text = "Teacher's name: \(self.teacherInfo3.teacherName)"
+                            self.courseNameLabel.text = "Course: \(self.classInfo.class1)"
 
+                            if self.teacherInfo3.teacherSchool == "008" {
+                                self.schoolLabel.text = "School: Buffalo Grove High School"
+                            } else if self.teacherInfo3.teacherSchool == "002" {
+                                self.schoolLabel.text = "School: Prospect High School"
+                            } else if self.teacherInfo3.teacherSchool == "004" {
+                                self.schoolLabel.text = "School: Wheeling High School"
+                            } else if self.teacherInfo3.teacherSchool == "005" {
+                                self.schoolLabel.text = "School: Elk Grove High School"
+                            } else if self.teacherInfo3.teacherSchool == "006" {
+                                self.schoolLabel.text = "School: John Hersey High School"
+                            } else if self.teacherInfo3.teacherSchool == "007" {
+                                self.schoolLabel.text = "School: Rolling Meadows High School"
+                            }
+                                
+                            }
+                            }
+                        }
+                    }
+        
+        
+                    
+                }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! TimesViewController
         NVC.studentInfo4 = studentInfo3
@@ -33,5 +67,4 @@ class ClassInfoViewController: UIViewController {
         NVC.teacherInfo4 = teacherInfo3
         NVC.classInfo = classInfo
     }
-    
 }

@@ -114,6 +114,7 @@ class ViewController: UIViewController  {
         NVC.studentInfo2 = studentInfo
         NVC.parentInfo2 = parentInfo
         NVC.teacherInfo2 = teacherInfo
+        NVC.studentPK = studentIdentificationTextField.text!
     }
     
 }
