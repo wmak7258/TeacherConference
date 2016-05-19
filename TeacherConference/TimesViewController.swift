@@ -17,10 +17,15 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var timeInformation = Time()
     var classInfo = Classes()
     var client = SQLClient()
+    var connects = true
+
     
     @IBOutlet weak var myTableView: UITableView!
     
     var timesArray: [Time] = [Time]()
+    
+    var hourArray: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let time1 = Time(Time: "5:00", Taken: false, Hour: 0)
@@ -37,6 +42,8 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }else{
             currentCell.detailTextLabel?.text = "Taken"
         }
+        //let currentTime = hourArray[indexPath.row]
+        //currentCell.textLabel!.text = currentTime
         return currentCell
         }
         
