@@ -31,12 +31,16 @@ class ClassInfoViewController: UIViewController {
                     for table in results as NSArray {
                         for row in table as! NSArray {
                             self.teacherInfo3.teacherName = row.objectForKey("teacher_name") as! String
-                            self.teacherInfo3.classes = row.objectForKey("teacher") as! String
                             self.teacherInfo3.teacherSchool = row.objectForKey("schoolPK") as! String
                             
                             self.teacherNameLabel.text = "Teacher's name: \(self.teacherInfo3.teacherName)"
                             self.courseNameLabel.text = "Course: \(self.classInfo.class1)"
+
+                            if self.teacherInfo3.teacherSchool == "008" {
+                                self.schoolLabel.text = "School: Buffalo Grove High School"
+                            } else {
                             self.schoolLabel.text = "School: \(self.teacherInfo3.teacherSchool)"
+                            }
                         }
                     }
                     
@@ -55,5 +59,5 @@ class ClassInfoViewController: UIViewController {
         NVC.teacherInfo4 = self.teacherInfo3
         NVC.classInfo = self.classInfo
     }
-
 }
+
