@@ -72,6 +72,9 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         classArray.append(class7)
         let class8 = Classes(class1: "qwsxcf", teacher: "ujm")
         classArray.append(class8)
+        print(teacherInfo)
+        print(parent)
+        print(student)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -17,7 +17,6 @@
 		E7D8DC161CC92E87004348A3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8DC151CC92E87004348A3 /* ScheduleViewController.swift */; };
 		E7D8DC181CC92F97004348A3 /* StudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8DC171CC92F97004348A3 /* StudentInfo.swift */; };
 		E7D8DC1A1CC931B5004348A3 /* ParentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D8DC191CC931B5004348A3 /* ParentInformation.swift */; };
-		E7F420911CEB6AA600A3BAB3 /* Time2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F420901CEB6AA600A3BAB3 /* Time2ViewController.swift */; };
 		E7FB3BDC1CCA6C050093AB8C /* TimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB3BDB1CCA6C050093AB8C /* TimesViewController.swift */; };
 		E7FB3C641CD10A2C0021426B /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FB3C631CD10A2C0021426B /* Classes.swift */; };
 		E7FBF1DB1CBFEB19000DC253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FBF1DA1CBFEB19000DC253 /* AppDelegate.swift */; };
@@ -60,7 +59,6 @@
 		E7D8DC151CC92E87004348A3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		E7D8DC171CC92F97004348A3 /* StudentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfo.swift; sourceTree = "<group>"; };
 		E7D8DC191CC931B5004348A3 /* ParentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentInformation.swift; sourceTree = "<group>"; };
-		E7F420901CEB6AA600A3BAB3 /* Time2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time2ViewController.swift; sourceTree = "<group>"; };
 		E7FB3BDB1CCA6C050093AB8C /* TimesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesViewController.swift; sourceTree = "<group>"; };
 		E7FB3C631CD10A2C0021426B /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		E7FBF1D71CBFEB19000DC253 /* TeacherConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeacherConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +147,6 @@
 				E7D8DC151CC92E87004348A3 /* ScheduleViewController.swift */,
 				E767F3001CCA6DFF0053E386 /* ClassInfoViewController.swift */,
 				E7FB3BDB1CCA6C050093AB8C /* TimesViewController.swift */,
-				E7F420901CEB6AA600A3BAB3 /* Time2ViewController.swift */,
 				E78568211CE4DCB500E560F7 /* DeleteViewController.swift */,
 				E755F89D1CD3AFCD00986ACD /* EndViewController.swift */,
 				E7FBF1E11CBFEB19000DC253 /* TeacherConference.xcdatamodeld */,
@@ -384,7 +381,6 @@
 				E7FBF1E31CBFEB19000DC253 /* TeacherConference.xcdatamodeld in Sources */,
 				E78568221CE4DCB500E560F7 /* DeleteViewController.swift in Sources */,
 				E7FB3C641CD10A2C0021426B /* Classes.swift in Sources */,
-				E7F420911CEB6AA600A3BAB3 /* Time2ViewController.swift in Sources */,
 				E7FBF1DB1CBFEB19000DC253 /* AppDelegate.swift in Sources */,
 				E74E5E321CDCE9E7008FA27A /* DataBaseController.swift in Sources */,
 				E755F89C1CD3AB3000986ACD /* Times.swift in Sources */,
