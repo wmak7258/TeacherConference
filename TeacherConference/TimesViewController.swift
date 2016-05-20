@@ -42,14 +42,17 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }else{
             currentCell.detailTextLabel?.text = "Taken"
         }
+        //let currentTime = hourArray[indexPath.row]
+        //currentCell.textLabel!.text = currentTime
         return currentCell
-        }
-        
-        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return timesArray.count
-        }
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if segue.identifier == "toDone"{
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return timesArray.count
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+                if segue.identifier == "toDone"{
                 let NVC = segue.destinationViewController as! EndViewController
                 let currentRow = myTableView.indexPathForSelectedRow?.row
                 NVC.studentInfo5 = studentInfo4
