@@ -81,7 +81,6 @@ class ViewController: UIViewController  {
                                 print(row.objectForKey("course_title") as! String)
                             }
                         }
-                        
                         self.client.disconnect()
                     }
                 }
