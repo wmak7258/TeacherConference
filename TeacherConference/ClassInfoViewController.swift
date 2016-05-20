@@ -33,7 +33,7 @@ class ClassInfoViewController: UIViewController {
                             
                             self.teacherNameLabel.text = "Teacher's name: \(self.classInfo.teacher)"
                             self.courseNameLabel.text = "Course: \(self.classInfo.class1)"
-
+                            
                             if self.teacherInfo3.teacherSchool == "008" {
                                 self.schoolLabel.text = "School: Buffalo Grove High School"
                             } else if self.teacherInfo3.teacherSchool == "002" {
@@ -47,15 +47,12 @@ class ClassInfoViewController: UIViewController {
                             } else if self.teacherInfo3.teacherSchool == "007" {
                                 self.schoolLabel.text = "School: Rolling Meadows High School"
                             }
-                                
-                            }
-                            }
+                            
                         }
                     }
-        
-        
-                    
                 }
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

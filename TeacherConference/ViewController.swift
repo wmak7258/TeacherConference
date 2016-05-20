@@ -81,12 +81,13 @@ class ViewController: UIViewController  {
                                 print(row.objectForKey("course_title") as! String)
                             }
                         }
-                        
                         self.client.disconnect()
                     }
                 }
             }
         }
+        parentInfo.parentName = parentNameTextField.text!
+        parentInfo.parentEmail = emailTextField.text!
     }
     
     func presentAlert()

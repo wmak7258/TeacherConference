@@ -47,8 +47,6 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
             }
         }
-    
-        
     }
     
     func loadNames()
