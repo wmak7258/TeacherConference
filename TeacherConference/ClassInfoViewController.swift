@@ -27,7 +27,6 @@ class ClassInfoViewController: UIViewController {
             if connect {
                 self.client.execute("SELECT * FROM Teacher ") {
                     results in
-                    print(results)
                     for table in results as NSArray {
                         for row in table as! NSArray {
                             self.teacherInfo3.teacherName = row.objectForKey("teacher_name") as! String
