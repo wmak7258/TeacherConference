@@ -18,7 +18,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var classInfo = Classes()
     var client = SQLClient()
     var connects = true
-
+    
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -33,7 +33,18 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+            if connect {
+                self.client.execute("select * from teacher_id", completion: { (results) in
+                    for table in results{
+                        for row in table as! NSArray
+                        {
+                            print(row)
+                        }
+                    }
+                })
+            }
+        }
         let currentCell = tableView.dequeueReusableCellWithIdentifier("timeCell")!
         let currentTime = timesArray[indexPath.row]
         currentCell.textLabel!.text = currentTime.time
@@ -52,31 +63,31 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-                if segue.identifier == "toDone"{
-                let NVC = segue.destinationViewController as! EndViewController
+        if segue.identifier == "toDone"{
+            let NVC = segue.destinationViewController as! EndViewController
+            let currentRow = myTableView.indexPathForSelectedRow?.row
+            NVC.studentInfo5 = studentInfo4
+            NVC.parentInfo5 = parentInfo4
+            NVC.teacherInfo5 = teacherInfo4
+            NVC.timeInfo = timesArray[currentRow!]
+            NVC.classInfo = classInfo
+            if timesArray[currentRow!].taken == true{
+                let alert = UIAlertController(title: "That time slot is filled", message: "You may not book that time", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: {
+                    action in
+                    print("Dismiss was pressed")
+                })
+                alert.addAction(cancelAction)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }else if segue.identifier == "toDelete"{
+                let NVC = segue.destinationViewController as! DeleteViewController
                 let currentRow = myTableView.indexPathForSelectedRow?.row
                 NVC.studentInfo5 = studentInfo4
                 NVC.parentInfo5 = parentInfo4
                 NVC.teacherInfo5 = teacherInfo4
                 NVC.timeInfo = timesArray[currentRow!]
                 NVC.classInfo = classInfo
-                if timesArray[currentRow!].taken == true{
-                    let alert = UIAlertController(title: "That time slot is filled", message: "You may not book that time", preferredStyle: .Alert)
-                    let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: {
-                        action in
-                        print("Dismiss was pressed")
-                    })
-                    alert.addAction(cancelAction)
-                    self.presentViewController(alert, animated: true, completion: nil)
-                }else if segue.identifier == "toDelete"{
-                    let NVC = segue.destinationViewController as! DeleteViewController
-                    let currentRow = myTableView.indexPathForSelectedRow?.row
-                    NVC.studentInfo5 = studentInfo4
-                    NVC.parentInfo5 = parentInfo4
-                    NVC.teacherInfo5 = teacherInfo4
-                    NVC.timeInfo = timesArray[currentRow!]
-                    NVC.classInfo = classInfo
-                }
             }
         }
     }
+}
