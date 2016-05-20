@@ -86,6 +86,8 @@ class ViewController: UIViewController  {
                 }
             }
         }
+        parentInfo.parentName = parentNameTextField.text!
+        parentInfo.parentEmail = emailTextField.text!
     }
     
     func presentAlert()

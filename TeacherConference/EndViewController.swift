@@ -30,7 +30,7 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        studentNameTextField.text = studentInfo5.firstName + studentInfo5.lastName
+        studentNameTextField.text = "\(studentInfo5.firstName) \(studentInfo5.lastName)"
         parentNameTextField.text = parentInfo5.parentName
         parentEmailTextField.text = parentInfo5.parentEmail
         teacherNameTextField.text = classInfo.teacher
