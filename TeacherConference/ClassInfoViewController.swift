@@ -25,17 +25,15 @@ class ClassInfoViewController: UIViewController {
         
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
-                self.client.execute("SELECT * FROM Teacher ") {
+                self.client.execute("SELECT * FROM Teacher") {
                     results in
-                    print(results)
                     for table in results as NSArray {
                         for row in table as! NSArray {
-                            self.teacherInfo3.teacherName = row.objectForKey("teacher_name") as! String
                             self.teacherInfo3.teacherSchool = row.objectForKey("schoolPK") as! String
                             
-                            self.teacherNameLabel.text = "Teacher's name: \(self.teacherInfo3.teacherName)"
+                            self.teacherNameLabel.text = "Teacher's name: \(self.classInfo.teacher)"
                             self.courseNameLabel.text = "Course: \(self.classInfo.class1)"
-
+                            
                             if self.teacherInfo3.teacherSchool == "008" {
                                 self.schoolLabel.text = "School: Buffalo Grove High School"
                             } else if self.teacherInfo3.teacherSchool == "002" {
@@ -49,15 +47,12 @@ class ClassInfoViewController: UIViewController {
                             } else if self.teacherInfo3.teacherSchool == "007" {
                                 self.schoolLabel.text = "School: Rolling Meadows High School"
                             }
-                                
-                            }
-                            }
+                            
                         }
                     }
-        
-        
-                    
                 }
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
