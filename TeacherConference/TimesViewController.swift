@@ -51,7 +51,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return timesArray.count
         }
         
-        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             if segue.identifier == "toDone"{
                 let NVC = segue.destinationViewController as! EndViewController
                 let currentRow = myTableView.indexPathForSelectedRow?.row
