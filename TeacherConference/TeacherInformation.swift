@@ -27,7 +27,7 @@ class Teacher {
         roomNumber = ""
         time = ""
         teacherEmail = ""
-        teacherID = ""
+        teacherID = "90002999"
         teacherSchool = ""
     }
 }
