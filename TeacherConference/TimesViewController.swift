@@ -58,63 +58,28 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }else{
             currentCell.detailTextLabel?.text = "Taken"
         }
-        //let currentTime = hourArray[indexPath.row]
-        //currentCell.textLabel!.text = currentTime
+   
         return currentCell
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timesArray.count
-    }
-    
+        }
+        
+        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return timesArray.count
+        }
     func insertTime(){
         let time2 = Time(Time: self.timeInformation.time, Taken: false, Hour: 0)
         self.timesArray.append(time2)
-
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toDone"{
-            let NVC = segue.destinationViewController as! EndViewController
-            let currentRow = myTableView.indexPathForSelectedRow?.row
-            NVC.studentInfo5 = studentInfo4
-            NVC.parentInfo5 = parentInfo4
-            NVC.teacherInfo5 = teacherInfo4
-            NVC.timeInfo = timesArray[currentRow!]
-            NVC.classInfo = classInfo
-            if timesArray[currentRow!].taken == true{
-                let alert = UIAlertController(title: "That time slot is filled", message: "You may not book that time", preferredStyle: .Alert)
-                let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: {
-                    action in
-                    print("Dismiss was pressed")
-                })
-                alert.addAction(cancelAction)
-                self.presentViewController(alert, animated: true, completion: nil)
-            }else if segue.identifier == "toDelete"{
-                let NVC = segue.destinationViewController as! DeleteViewController
+        
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            if segue.identifier == "toDone"{
+                let NVC = segue.destinationViewController as! EndViewController
                 let currentRow = myTableView.indexPathForSelectedRow?.row
                 NVC.studentInfo5 = studentInfo4
                 NVC.parentInfo5 = parentInfo4
                 NVC.teacherInfo5 = teacherInfo4
                 NVC.timeInfo = timesArray[currentRow!]
                 NVC.classInfo = classInfo
-               /* client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
-                    if connect {
-                        self.client.execute("update conference_schedule set studentPK = \(self.studentInfo4.ID) where id = \(self.id)", completion: { (results) in
-                            for table in results{
-                                for row in table as! NSArray
-                                {
-                                    self.timeInformation.time = row.objectForKey("time_complete") as! String
-                                    print(self.timeInformation.time)
-                                    self.insertTime()
-                                }
-                            }
-                            
-                            
-                        })
-                    }
-                }*/
-            }
+                          }
         }
     }
-}
+
