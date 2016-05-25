@@ -32,15 +32,16 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
-                self.client.execute("select time_complete from conference_schedule where teacher_id = 90572499", completion: { (results) in
+                self.client.execute("select * from conference_schedule where teacher_id = 90572499", completion: { (results) in
                     for table in results{
                         for row in table as! NSArray
                         {
                             self.timeInformation.time = row.objectForKey("time_complete") as! String
                             print(self.timeInformation.time)
-                            //self.id = row.objectForKey("id") as! String
-                            //print(self.id)
-                             self.insertTime()
+                            self.insertTime()
+                            self.id = row.objectForKey("id") as! String
+                            print(self.id)
+                            
                         }
                     }
                     
@@ -98,7 +99,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 NVC.teacherInfo5 = teacherInfo4
                 NVC.timeInfo = timesArray[currentRow!]
                 NVC.classInfo = classInfo
-               /* client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+                client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
                     if connect {
                         self.client.execute("update conference_schedule set studentPK = \(self.studentInfo4.ID) where id = \(self.id)", completion: { (results) in
                             for table in results{
@@ -113,7 +114,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             
                         })
                     }
-                }*/
+                }
             }
         }
     }
