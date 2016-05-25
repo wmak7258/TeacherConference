@@ -18,6 +18,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var classInfo = Classes()
     var client = SQLClient()
     var connects = true
+    var id = ""
     
     
     @IBOutlet weak var myTableView: UITableView!
@@ -28,17 +29,17 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let time1 = Time(Time: "5:00", Taken: false, Hour: 0)
-        timesArray.append(time1)
-        
+    
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
-                self.client.execute("select time_complete from conference_schedule where teacher_id = 90599099", completion: { (results) in
+                self.client.execute("select time_complete from conference_schedule where teacher_id = 90572499", completion: { (results) in
                     for table in results{
                         for row in table as! NSArray
                         {
                             self.timeInformation.time = row.objectForKey("time_complete") as! String
                             print(self.timeInformation.time)
+                            //self.id = row.objectForKey("id") as! String
+                            //print(self.id)
                              self.insertTime()
                         }
                     }
@@ -75,6 +76,22 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 NVC.teacherInfo5 = teacherInfo4
                 NVC.timeInfo = timesArray[currentRow!]
                 NVC.classInfo = classInfo
+               /* client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+                    if connect {
+                        self.client.execute("update conference_schedule set studentPK = \(self.studentInfo4.ID) where id = \(self.id)", completion: { (results) in
+                            for table in results{
+                                for row in table as! NSArray
+                                {
+                                    self.timeInformation.time = row.objectForKey("time_complete") as! String
+                                    print(self.timeInformation.time)
+                                    self.insertTime()
+                                }
+                            }
+                            
+                            
+                        })
+                    }
+                }*/
             }
         }
     }
