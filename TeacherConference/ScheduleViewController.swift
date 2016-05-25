@@ -62,6 +62,11 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         return classArray.count
     }
     
+//    func insertTime(){
+//        let time2 = Time(Time: self.timeInformation.time, Taken: false, Hour: 0)
+//        self.timesArray.append(time2)
+//    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let currentCell = tableView.dequeueReusableCellWithIdentifier("myCell")!
         let currentClass = classArray[indexPath.row]
