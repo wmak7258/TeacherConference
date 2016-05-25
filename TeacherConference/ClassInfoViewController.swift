@@ -30,7 +30,7 @@ class ClassInfoViewController: UIViewController {
                     print(self.classInfo.teacherID)
                     for table in results as NSArray {
                         for row in table as! NSArray {
-                          //  self.teacherInfo3.teacherSchool = row.objectForKey("schoolPK") as! String
+                            self.teacherInfo3.teacherSchool = row.objectForKey("school_id") as! String
                             self.classInfo.teacherID = row.objectForKey("teacher_id") as! String
                             self.teacherNameLabel.text = "Teacher's name: \(self.classInfo.teacher)"
                             self.courseNameLabel.text = "Course: \(self.classInfo.class1)"
