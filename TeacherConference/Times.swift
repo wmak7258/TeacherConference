@@ -18,7 +18,7 @@ class Time{
         hour = h
     }
     init(){
-        time = ""
+        time = " "
         taken = false
         hour = 0
     }

@@ -31,20 +31,24 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let time1 = Time(Time: "5:00", Taken: false, Hour: 0)
         timesArray.append(time1)
         
-    }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
-                self.client.execute("select * from teacher_id", completion: { (results) in
+                self.client.execute("select time_complete from conference_schedule where teacher_id = 90599099", completion: { (results) in
                     for table in results{
                         for row in table as! NSArray
                         {
-                            print(row)
+                            self.timeInformation.time = row.objectForKey("time_complete") as! String
+                            print(self.timeInformation.time)
+                             self.insertTime()
                         }
                     }
+                    
+                    self.myTableView.reloadData()
                 })
             }
         }
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let currentCell = tableView.dequeueReusableCellWithIdentifier("timeCell")!
         let currentTime = timesArray[indexPath.row]
         currentCell.textLabel!.text = currentTime.time
