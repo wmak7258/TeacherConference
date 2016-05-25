@@ -40,7 +40,9 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
                             self.classInfo.teacherID = row.objectForKey("teacher_id") as! String
                             print(self.classInfo.class1)
                             print(self.classInfo.teacher)
-                            self.classArray.append(self.classInfo)
+                            
+                            self.insertTime()
+
                         }
                     }
                     self.loadNames()
@@ -75,7 +77,13 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return currentCell
     }
+    
+    func insertTime(){
+        let class2 = Classes(class1: "\(classInfo.class1)", teacher: "\(classInfo.teacher)", teacherID: "\(classInfo.teacherID)")
+        self.classArray.append(class2)
         
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ClassInfoViewController
         let currentRow = myTableView.indexPathForSelectedRow?.row
