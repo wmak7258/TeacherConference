@@ -37,9 +37,10 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
                         for row in table as! NSArray {
                             self.classInfo.class1 = row.objectForKey("course_title") as! String
                             self.classInfo.teacher = row.objectForKey("teacher_name") as! String
+                            self.classInfo.teacherID = row.objectForKey("teacher_id") as! String
                             print(self.classInfo.class1)
                             print(self.classInfo.teacher)
-                        
+                            self.classArray.append(self.classInfo)
                         }
                     }
                     self.loadNames()
