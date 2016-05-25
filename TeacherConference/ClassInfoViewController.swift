@@ -25,13 +25,13 @@ class ClassInfoViewController: UIViewController {
         
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
-                self.client.execute("SELECT * FROM Teacher Where teacher_id = \(self.teacherInfo3.teacherID)") {
+                self.client.execute("SELECT * FROM teacher_course Where teacher_id = \(self.classInfo.teacherID)") {
                     results in
-                    print(self.teacherInfo3.teacherID)
+                    print(self.classInfo.teacherID)
                     for table in results as NSArray {
                         for row in table as! NSArray {
-                            self.teacherInfo3.teacherSchool = row.objectForKey("schoolPK") as! String
-                            self.teacherInfo3.teacherID = row.objectForKey("teacher_id") as! String
+                          //  self.teacherInfo3.teacherSchool = row.objectForKey("schoolPK") as! String
+                            self.classInfo.teacherID = row.objectForKey("teacher_id") as! String
                             self.teacherNameLabel.text = "Teacher's name: \(self.classInfo.teacher)"
                             self.courseNameLabel.text = "Course: \(self.classInfo.class1)"
                             
