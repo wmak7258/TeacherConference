@@ -41,7 +41,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
                             print(self.classInfo.class1)
                             print(self.classInfo.teacher)
                             
-                            self.insertTime()
+                            self.insertClass()
 
                         }
                     }
@@ -76,7 +76,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         return currentCell
     }
     
-    func insertTime(){
+    func insertClass(){
         let class2 = Classes(class1: "\(classInfo.class1)", teacher: "\(classInfo.teacher)", teacherID: "\(classInfo.teacherID)")
         self.classArray.append(class2)
         
