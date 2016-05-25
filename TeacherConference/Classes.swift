@@ -11,15 +11,18 @@ import Foundation
 class Classes {
     var class1: String
     var teacher: String
+    var teacherID: String
    
-    init(class1 c1: String, teacher t:String) {
+    init(class1 c1: String, teacher t:String, teacherID tID: String) {
         class1 = c1
         teacher = t
+        teacherID = tID
        
     }
     init() {
         class1 = " "
         teacher = " "
+        teacherID = " "
     }
     
     
