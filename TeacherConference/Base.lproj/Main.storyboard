@@ -590,7 +590,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMM-cm-br0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4588" y="349"/>
+            <point key="canvasLocation" x="5312" y="367"/>
+        </scene>
+        <!--Psi Controller-->
+        <scene sceneID="IRj-ss-Pzr">
+            <objects>
+                <viewController id="SKZ-EO-L6q" customClass="PsiController" customModule="TeacherConference" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iU7-q8-0yo"/>
+                        <viewControllerLayoutGuide type="bottom" id="1s8-Ev-50F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vtA-Ui-jP3">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lp-Es-hX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4497" y="367"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HQf-cU-TLK">
