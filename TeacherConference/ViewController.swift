@@ -69,6 +69,7 @@ class ViewController: UIViewController  {
                             }
                             if self.connects == true {
                                 self.performSegueWithIdentifier("schedule", sender: nil)
+                                self.clearTextFields()
                             }
                         }
                     }
