@@ -20,6 +20,34 @@
                ReferencedContainer = "container:TeacherConference.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E7FBF1ED1CBFEB19000DC253"
+               BuildableName = "TeacherConferenceTests.xctest"
+               BlueprintName = "TeacherConferenceTests"
+               ReferencedContainer = "container:TeacherConference.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E7FBF1F81CBFEB19000DC253"
+               BuildableName = "TeacherConferenceUITests.xctest"
+               BlueprintName = "TeacherConferenceUITests"
+               ReferencedContainer = "container:TeacherConference.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,26 +56,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E7FBF1ED1CBFEB19000DC253"
-               BuildableName = "TeacherConferenceTests.xctest"
-               BlueprintName = "TeacherConferenceTests"
-               ReferencedContainer = "container:TeacherConference.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E7FBF1F81CBFEB19000DC253"
-               BuildableName = "TeacherConferenceUITests.xctest"
-               BlueprintName = "TeacherConferenceUITests"
-               ReferencedContainer = "container:TeacherConference.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
