@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,11 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LaunchWall" translatesAutoresizingMaskIntoConstraints="NO" id="fPo-EE-sPt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchWall" translatesAutoresizingMaskIntoConstraints="NO" id="fPo-EE-sPt">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1032"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="fPo-EE-sPt" secondAttribute="trailing" constant="-20" id="62E-mM-bqy"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fPo-EE-sPt" secondAttribute="bottom" constant="-8" id="CFk-Yg-dGe"/>
+                            <constraint firstItem="fPo-EE-sPt" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="c0z-Mo-zmg"/>
+                            <constraint firstItem="fPo-EE-sPt" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="xC2-Qp-01w"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                 </viewController>
