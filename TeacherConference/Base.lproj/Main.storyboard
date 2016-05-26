@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="d214" translatesAutoresizingMaskIntoConstraints="NO" id="4gG-4s-oXJ">
+                                <rect key="frame" x="172" y="72" width="422" height="128"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parent name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80t-XL-0Lg">
                                 <rect key="frame" x="336" y="404" width="97" height="21"/>
                                 <constraints>
@@ -192,6 +195,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nanook" translatesAutoresizingMaskIntoConstraints="NO" id="MdB-CV-KIa">
+                                <rect key="frame" x="20" y="232" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grenadiers" translatesAutoresizingMaskIntoConstraints="NO" id="70U-gC-tGw">
+                                <rect key="frame" x="20" y="538" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bison" translatesAutoresizingMaskIntoConstraints="NO" id="W86-Lp-svl">
+                                <rect key="frame" x="508" y="538" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mustangs" translatesAutoresizingMaskIntoConstraints="NO" id="fRx-Ui-ADS">
+                                <rect key="frame" x="508" y="384" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="knights" translatesAutoresizingMaskIntoConstraints="NO" id="ikq-fe-BVg">
+                                <rect key="frame" x="508" y="232" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wildcats" translatesAutoresizingMaskIntoConstraints="NO" id="Fkr-nc-ObP">
+                                <rect key="frame" x="20" y="384" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -630,4 +651,13 @@
             <point key="canvasLocation" x="475" y="137"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bison" width="167" height="109"/>
+        <image name="d214" width="800" height="277"/>
+        <image name="grenadiers" width="325" height="260"/>
+        <image name="knights" width="1436" height="1151"/>
+        <image name="mustangs" width="150" height="150"/>
+        <image name="nanook" width="175" height="245"/>
+        <image name="wildcats" width="400" height="400"/>
+    </resources>
 </document>
