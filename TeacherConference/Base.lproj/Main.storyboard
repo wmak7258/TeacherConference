@@ -76,7 +76,7 @@
                                     <constraint firstAttribute="height" constant="36" id="Jzf-2I-bhk"/>
                                     <constraint firstAttribute="width" constant="318" id="g7b-wt-TbD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -86,7 +86,7 @@
                                     <constraint firstAttribute="height" constant="29" id="0UU-cp-e1t"/>
                                     <constraint firstAttribute="width" constant="69" id="SN6-Ba-Kdi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -345,6 +345,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="d214" translatesAutoresizingMaskIntoConstraints="NO" id="00B-n1-VJk">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zes-hH-Sub">
                                 <rect key="frame" x="331" y="752" width="106" height="30"/>
                                 <state key="normal" title="Pick Times Slot"/>
@@ -353,23 +356,29 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course: (Course)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZB-QB-HBn">
-                                <rect key="frame" x="319" y="256" width="383" height="21"/>
+                                <rect key="frame" x="290" y="256" width="383" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="School: (School)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv8-j4-fGp">
-                                <rect key="frame" x="321" y="301" width="349" height="21"/>
+                                <rect key="frame" x="290" y="301" width="349" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher's name: (Name)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fh-r5-Sk0">
-                                <rect key="frame" x="319" y="213" width="356" height="21"/>
+                                <rect key="frame" x="290" y="213" width="356" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2T2-qB-O9v">
+                                <rect key="frame" x="20" y="194" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewT-Ql-5OU">
+                                <rect key="frame" x="508" y="194" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -377,6 +386,8 @@
                     <connections>
                         <outlet property="courseNameLabel" destination="6ZB-QB-HBn" id="ooc-yM-fhf"/>
                         <outlet property="schoolLabel" destination="bv8-j4-fGp" id="Fxp-nf-ffp"/>
+                        <outlet property="schoolView" destination="2T2-qB-O9v" id="fyB-Ra-B10"/>
+                        <outlet property="schoolView2" destination="ewT-Ql-5OU" id="hGc-kq-gep"/>
                         <outlet property="teacherNameLabel" destination="9Fh-r5-Sk0" id="Ng0-XV-HEX"/>
                     </connections>
                 </viewController>
