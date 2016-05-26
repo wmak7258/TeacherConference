@@ -48,7 +48,7 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
         let okAction = UIAlertAction(title: "Yes", style: .Default, handler: {
             action in
             
-            let alert = UIAlertController(title: "Email", message: "Do you want to send an email to the teacher?", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Email", message: "Do you want to send an email?", preferredStyle: .Alert)
             let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: {
                 action in
             })
