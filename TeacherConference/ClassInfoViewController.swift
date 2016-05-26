@@ -20,8 +20,11 @@ class ClassInfoViewController: UIViewController {
     @IBOutlet weak var teacherNameLabel: UILabel!
     @IBOutlet weak var courseNameLabel: UILabel!
     @IBOutlet weak var schoolLabel: UILabel!
+    @IBOutlet weak var schoolView: UIImageView!
+    @IBOutlet weak var schoolView2: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
@@ -37,16 +40,42 @@ class ClassInfoViewController: UIViewController {
                             
                             if self.teacherInfo3.teacherSchool == "008" {
                                 self.schoolLabel.text = "School: Buffalo Grove High School"
+                                let myImage = UIImage(named: "Bison")
+                                self.schoolView.image = myImage
+                                let myImage2 = UIImage(named: "Bison")
+                                self.schoolView2.image = myImage2
+                                
+                                
                             } else if self.teacherInfo3.teacherSchool == "002" {
                                 self.schoolLabel.text = "School: Prospect High School"
+                                let myImage = UIImage(named: "knights")
+                                self.schoolView.image = myImage
+                                let myImage2 = UIImage(named: "knights")
+                                self.schoolView2.image = myImage2
                             } else if self.teacherInfo3.teacherSchool == "004" {
                                 self.schoolLabel.text = "School: Wheeling High School"
+                                let myImage = UIImage(named: "wildcats")
+                                self.schoolView.image = myImage
+                                let myImage2 = UIImage(named: "wildcats")
+                                self.schoolView2.image = myImage2
                             } else if self.teacherInfo3.teacherSchool == "005" {
                                 self.schoolLabel.text = "School: Elk Grove High School"
+                                let myImage = UIImage(named: "grenadiers")
+                                self.schoolView.image = myImage
+                                let myImage2 = UIImage(named: "grenadiers")
+                                self.schoolView2.image = myImage2
                             } else if self.teacherInfo3.teacherSchool == "006" {
                                 self.schoolLabel.text = "School: John Hersey High School"
+                                let myImage = UIImage(named: "nanook")
+                                self.schoolView.image = myImage
+                                let myImage2 = UIImage(named: "nanook")
+                                self.schoolView2.image = myImage2
                             } else if self.teacherInfo3.teacherSchool == "007" {
                                 self.schoolLabel.text = "School: Rolling Meadows High School"
+                                let myImage = UIImage(named: "mustangs")
+                                self.schoolView.image = myImage
+                                let myImage2 = UIImage(named: "mustangs")
+                                self.schoolView2.image = myImage2
                             }
                             
                         }
