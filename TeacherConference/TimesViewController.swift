@@ -29,7 +29,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
                 self.client.execute("select time_complete from conference_schedule where teacher_id = 90572499", completion: { (results) in
