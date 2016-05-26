@@ -27,7 +27,7 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
     @IBAction func printData(sender: UIBarButtonItem) {
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         studentNameTextField.text = "\(studentInfo5.firstName) \(studentInfo5.lastName)"
@@ -39,12 +39,12 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
         timeTextField.text = timeInfo.time
         
     }
-
+    
     @IBAction func presentAlert(sender: UIButton) {
         let alert = UIAlertController(title: "Are you done?", message: "Are you sure that all this information is correct?", preferredStyle: .Alert)
         let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: {
             action in
-            })
+        })
         let okAction = UIAlertAction(title: "Yes", style: .Default, handler: {
             action in
             
@@ -115,7 +115,7 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
         
         return mailComposerVC
     }
-
+    
     
     func showSendMailErrorAlert() {
         let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
@@ -131,6 +131,6 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
         controller.dismissViewControllerAnimated(true, completion: nil)
         
     }
-
-
+    
+    
 }

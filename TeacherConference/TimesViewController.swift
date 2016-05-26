@@ -29,7 +29,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
                 self.client.execute("select * from conference_schedule where teacher_id = 90572499", completion: { (results) in
@@ -59,46 +59,44 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }else{
             currentCell.detailTextLabel?.text = "Taken"
         }
-   
-        return currentCell
-        }
         
-        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return timesArray.count
-        }
+        return currentCell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return timesArray.count
+    }
     
     func insertTime(){
         let time2 = Time(Time: self.timeInformation.time, Taken: false, Hour: 0)
         self.timesArray.append(time2)
     }
     
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if segue.identifier == "toDone"{
-                let NVC = segue.destinationViewController as! EndViewController
-                let currentRow = myTableView.indexPathForSelectedRow?.row
-                NVC.studentInfo5 = studentInfo4
-                NVC.parentInfo5 = parentInfo4
-                NVC.teacherInfo5 = teacherInfo4
-                NVC.timeInfo = timesArray[currentRow!]
-                NVC.classInfo = classInfo
-                print(studentInfo4.ID)
-                client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
-                    if connect {
-                        self.client.execute("update conference_schedule set studentPK = \(self.studentInfo4.ID) where id = \(self.id)", completion: { (results) in
-                            for table in results{
-                                for row in table as! NSArray
-                                {
-                                    self.timeInformation.time = row.objectForKey("time_complete") as! String
-                                    print(self.timeInformation.time)
-                                    self.insertTime()
-                                }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toDone"{
+            let NVC = segue.destinationViewController as! EndViewController
+            let currentRow = myTableView.indexPathForSelectedRow?.row
+            NVC.studentInfo5 = studentInfo4
+            NVC.parentInfo5 = parentInfo4
+            NVC.teacherInfo5 = teacherInfo4
+            NVC.timeInfo = timesArray[currentRow!]
+            NVC.classInfo = classInfo
+            print(studentInfo4.ID)
+            client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+                if connect {
+                    self.client.execute("update conference_schedule set studentPK = \(self.studentInfo4.ID) where id = \(self.id)", completion: { (results) in
+                        for table in results{
+                            for row in table as! NSArray
+                            {
+                                self.timeInformation.time = row.objectForKey("time_complete") as! String
+                                print(self.timeInformation.time)
+                                self.insertTime()
                             }
-                            
-                            
-                        })
-                    }
+                        }
+                    })
                 }
             }
         }
     }
+}
 
