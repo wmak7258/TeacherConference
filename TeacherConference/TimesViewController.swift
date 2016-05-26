@@ -68,7 +68,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func insertTime(){
-        let time2 = Time(Time: self.timeInformation.time, Taken: false, Hour: 0)
+        let time2 = Time(Time: self.timeInformation.time, Taken: true, Hour: 0)
         self.timesArray.append(time2)
     }
     
