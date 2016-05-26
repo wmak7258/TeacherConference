@@ -25,7 +25,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var myTableView: UITableView!
     
     var classArray: [Classes] = [Classes]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
@@ -42,22 +42,13 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
                             print(self.classInfo.teacher)
                             
                             self.insertTime()
-
+                            
                         }
                     }
-                    self.loadNames()
                     self.myTableView.reloadData()
                 }
             }
         }
-    }
-    
-    func loadNames()
-    {
-        let teacherInfo :Dictionary <String,String> = ["Teacher Name": "\(teacherInfo2).teacherName)", "Class": "\(teacherInfo2.classes)", "Room Number": "\(teacherInfo2.roomNumber)", "Time": "\(teacherInfo2.time)", "Teacher E-Mail": "\(teacherInfo2.teacherEmail)", "TeacherID": "\(teacherInfo2.teacherID)", "Teacher School": "\(teacherInfo2.teacherSchool)"]
-        let parent :Dictionary <String,String> = ["Parent Name": "\(parentInfo2.parentName)", "Parent E-Mail": "\(parentInfo2.parentEmail)", "Parent Phone Number": "\(parentInfo2.parentPhoneNumber)"]
-        let student :Dictionary <String,String> = ["Student Name": "\(studentInfo2.firstName + studentInfo2.lastName)", "Student Grade": "\(studentInfo2.grade)", "Student ID": "\(studentInfo2.ID)"]
-  
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,7 +70,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         self.classArray.append(class2)
         
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ClassInfoViewController
         let currentRow = myTableView.indexPathForSelectedRow?.row
