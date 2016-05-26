@@ -67,7 +67,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return timesArray.count
         }
     func insertTime(){
-        let time2 = Time(Time: self.timeInformation.time, Taken: false, Hour: 0)
+        let time2 = Time(Time: self.timeInformation.time, Taken: true, Hour: 0)
         self.timesArray.append(time2)
     }
     
@@ -75,6 +75,14 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             if segue.identifier == "toDone"{
                 let NVC = segue.destinationViewController as! EndViewController
                 let currentRow = myTableView.indexPathForSelectedRow?.row
+                if timeInformation.taken == true{
+                    let alert = UIAlertController(title: "Are you done?", message: "Are you sure that all this information is correct?", preferredStyle: .Alert)
+                    let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: {
+                        action in
+                    })
+                    alert.addAction(cancelAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
                 NVC.studentInfo5 = studentInfo4
                 NVC.parentInfo5 = parentInfo4
                 NVC.teacherInfo5 = teacherInfo4
