@@ -65,6 +65,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return timesArray.count
         }
+    
     func insertTime(){
         let time2 = Time(Time: self.timeInformation.time, Taken: false, Hour: 0)
         self.timesArray.append(time2)
