@@ -69,19 +69,9 @@ class ViewController: UIViewController  {
                             }
                             if self.connects == true {
                                 self.performSegueWithIdentifier("schedule", sender: nil)
+                                self.clearTextFields()
                             }
                         }
-                    }
-                    self.client.execute("SELECT * FROM students_courses Where studentPk = '\(self.studentIdentificationTextField.text!)' ") {
-                        results in
-                        
-                        for table in results as NSArray {
-                            for row in table as! NSArray {
-                                print(row.objectForKey("course_id") as! String)
-                                print(row.objectForKey("course_title") as! String)
-                            }
-                        }
-                        self.client.disconnect()
                     }
                 }
             }
