@@ -39,8 +39,6 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
                             self.classInfo.teacher = row.objectForKey("teacher_name") as! String
                             self.classInfo.teacherID = row.objectForKey("teacher_id") as! String
                             self.studentInfo2.ID = Int(self.studentPK)!
-                            print(self.classInfo.class1)
-                            print(self.classInfo.teacher)
                             
                             self.insertTime()
                             
