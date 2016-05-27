@@ -29,7 +29,11 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        let time1 = Time(Time: "4:30 PM", Taken: true, Hour: 0)
+        self.timesArray.append(time1)
+
+        
+        
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
                 self.client.execute("select * from conference_schedule where teacher_id = 90572499", completion: { (results) in
@@ -67,7 +71,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return timesArray.count
         }
     func insertTime(){
-        let time2 = Time(Time: self.timeInformation.time, Taken: true, Hour: 0)
+        let time2 = Time(Time: self.timeInformation.time, Taken: false, Hour: 0)
         self.timesArray.append(time2)
     }
     
