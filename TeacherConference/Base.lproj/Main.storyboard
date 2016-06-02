@@ -502,9 +502,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="idU-0z-LnY" kind="show" identifier="toDone" id="BK3-BT-YAq"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -526,6 +523,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="myTableView" destination="tGw-Ee-ujl" id="2Xj-jj-Xkg"/>
+                        <segue destination="idU-0z-LnY" kind="show" identifier="toDone" id="rJd-Uc-B1U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zQ-Up-xa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -653,7 +651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMM-cm-br0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4717" y="393"/>
+            <point key="canvasLocation" x="4701" y="349"/>
         </scene>
         <!--Psi Controller-->
         <scene sceneID="IRj-ss-Pzr">
