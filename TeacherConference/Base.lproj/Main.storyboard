@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueback" translatesAutoresizingMaskIntoConstraints="NO" id="aDi-hZ-RdM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HerseyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="aDi-hZ-RdM">
                                 <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parent name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80t-XL-0Lg">
@@ -197,27 +197,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nanook" translatesAutoresizingMaskIntoConstraints="NO" id="MdB-CV-KIa">
-                                <rect key="frame" x="20" y="232" width="240" height="128"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grenadiers" translatesAutoresizingMaskIntoConstraints="NO" id="70U-gC-tGw">
-                                <rect key="frame" x="20" y="538" width="240" height="128"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bison" translatesAutoresizingMaskIntoConstraints="NO" id="W86-Lp-svl">
-                                <rect key="frame" x="508" y="538" width="240" height="128"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mustangs" translatesAutoresizingMaskIntoConstraints="NO" id="fRx-Ui-ADS">
-                                <rect key="frame" x="508" y="384" width="240" height="128"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="knights" translatesAutoresizingMaskIntoConstraints="NO" id="ikq-fe-BVg">
-                                <rect key="frame" x="508" y="232" width="240" height="128"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wildcats" translatesAutoresizingMaskIntoConstraints="NO" id="Fkr-nc-ObP">
-                                <rect key="frame" x="20" y="384" width="240" height="128"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d214" translatesAutoresizingMaskIntoConstraints="NO" id="4gG-4s-oXJ">
                                 <rect key="frame" x="173" y="839" width="422" height="128"/>
                             </imageView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKD-Zd-2pD">
+                                <rect key="frame" x="20" y="299" width="242" height="298"/>
+                            </pickerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nanook" translatesAutoresizingMaskIntoConstraints="NO" id="MdB-CV-KIa">
+                                <rect key="frame" x="542" y="299" width="206" height="298"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2q-G3-Txb">
+                                <rect key="frame" x="133" y="252" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -272,10 +266,14 @@
                     <connections>
                         <outlet property="emailTextField" destination="iFO-OZ-h6N" id="Za1-TH-j64"/>
                         <outlet property="firstNameTextField" destination="mhS-Ch-tFX" id="Pbw-hP-UuX"/>
+                        <outlet property="label1" destination="v2q-G3-Txb" id="ULX-82-9Nb"/>
                         <outlet property="lastNameTextField" destination="hv4-v7-abN" id="5lC-Hl-lMR"/>
                         <outlet property="parentNameTextField" destination="9LX-Ya-ubW" id="GlE-m1-JMm"/>
                         <outlet property="passwordTextField" destination="ori-8r-KWK" id="bGP-Sb-GXH"/>
                         <outlet property="phoneNumberTextField" destination="X8q-jl-haB" id="ktq-mH-13F"/>
+                        <outlet property="schoolBackground" destination="aDi-hZ-RdM" id="UQc-5n-eXl"/>
+                        <outlet property="schoolLogo" destination="MdB-CV-KIa" id="h7g-xc-zL9"/>
+                        <outlet property="schoolPicker" destination="aKD-Zd-2pD" id="LYI-tb-QfN"/>
                         <outlet property="signInButton" destination="goD-4M-QGc" id="87z-bP-5ST"/>
                         <outlet property="studentIdentificationTextField" destination="lxK-f5-fZn" id="eDw-bZ-XAf"/>
                         <segue destination="cv1-fg-UGn" kind="show" identifier="schedule" id="lhA-lv-fCi"/>
@@ -703,13 +701,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bison" width="167" height="109"/>
+        <image name="HerseyBackground" width="1078" height="674"/>
         <image name="blueback" width="2560" height="1600"/>
         <image name="d214" width="800" height="277"/>
-        <image name="grenadiers" width="325" height="260"/>
-        <image name="knights" width="1436" height="1151"/>
-        <image name="mustangs" width="150" height="150"/>
         <image name="nanook" width="175" height="245"/>
-        <image name="wildcats" width="400" height="400"/>
     </resources>
 </document>

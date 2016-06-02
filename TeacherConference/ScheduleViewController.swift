@@ -40,7 +40,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
                             self.classInfo.teacherID = row.objectForKey("teacher_id") as! String
                             self.studentInfo2.ID = Int(self.studentPK)!
                             
-                            self.insertClass()
+                            self.insertTime()
                             
                         }
                     }
@@ -49,8 +49,6 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         }
     }
-    
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classArray.count
