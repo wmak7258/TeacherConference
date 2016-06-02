@@ -9,7 +9,7 @@
 import UIKit
 import SQLClient
 
-class ViewController: UIViewController  {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var studentInfo = Student()
     var parentInfo = Parent()
@@ -25,11 +25,43 @@ class ViewController: UIViewController  {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var schoolPicker: UIPickerView!
+    @IBOutlet weak var schoolBackground: UIImageView!
+    @IBOutlet weak var schoolLogo: UIImageView!
+    @IBOutlet weak var label1: UILabel!
     
+    var pickerData = ["John Hersey", "Prospect", "Rolling Meadows", "Buffalo Grove", "Elk Grove", "Wheeling"]
+    var logoImage: [UIImage] = [
+        UIImage(named: "nanook")!,
+        UIImage(named: "Prospect")!,
+        UIImage(named: "rollingmeadows")!,
+        UIImage(named: "buffalogrove")!,
+        UIImage(named: "Elk Grove")!,
+        UIImage(named: "wheeling")!
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        schoolPicker.dataSource = self
+        schoolPicker.delegate = self
         
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+        schoolLogo.image = logoImage[row]
     }
     
     @IBAction func ToNextViewController(sender: UIButton) {
