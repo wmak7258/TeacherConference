@@ -25,7 +25,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var myTableView: UITableView!
     
     var classArray: [Classes] = [Classes]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
@@ -39,11 +39,9 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
                             self.classInfo.teacher = row.objectForKey("teacher_name") as! String
                             self.classInfo.teacherID = row.objectForKey("teacher_id") as! String
                             self.studentInfo2.ID = Int(self.studentPK)!
-                            print(self.classInfo.class1)
-                            print(self.classInfo.teacher)
                             
-                            self.insertClass()
-
+                            self.insertTime()
+                            
                         }
                     }
                     self.myTableView.reloadData()
@@ -51,8 +49,6 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         }
     }
-    
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classArray.count
@@ -73,7 +69,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         self.classArray.append(class2)
         
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ClassInfoViewController
         let currentRow = myTableView.indexPathForSelectedRow?.row
