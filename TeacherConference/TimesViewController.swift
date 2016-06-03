@@ -90,7 +90,20 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
+    }
     
+      func viewWillAppear2(animated: Bool) {
+        
+        // Add a background view to the table view
+        let backgroundImage = UIImage(named: "HerseyBackground")
+        let imageView = UIImageView(image: backgroundImage)
+        myTableView.backgroundView = imageView
+        myTableView.tableFooterView = UIView(frame: CGRectZero)
+        myTableView.reloadData()
+    }
+
     
         override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toDone"{

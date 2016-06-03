@@ -209,7 +209,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2q-G3-Txb">
                                 <rect key="frame" x="133" y="252" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -266,7 +266,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="iFO-OZ-h6N" id="Za1-TH-j64"/>
                         <outlet property="firstNameTextField" destination="mhS-Ch-tFX" id="Pbw-hP-UuX"/>
-                        <outlet property="label1" destination="v2q-G3-Txb" id="ULX-82-9Nb"/>
                         <outlet property="lastNameTextField" destination="hv4-v7-abN" id="5lC-Hl-lMR"/>
                         <outlet property="parentNameTextField" destination="9LX-Ya-ubW" id="GlE-m1-JMm"/>
                         <outlet property="passwordTextField" destination="ori-8r-KWK" id="bGP-Sb-GXH"/>
@@ -322,6 +321,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="f4V-Ob-NEx" kind="show" id="5Px-JY-N1R"/>
                                         </connections>
@@ -356,7 +356,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueback" translatesAutoresizingMaskIntoConstraints="NO" id="etQ-p0-JP5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HerseyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="etQ-p0-JP5">
                                 <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d214" translatesAutoresizingMaskIntoConstraints="NO" id="00B-n1-VJk">
@@ -540,7 +540,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueback" translatesAutoresizingMaskIntoConstraints="NO" id="ycI-k6-GLm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HerseyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ycI-k6-GLm">
                                 <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xoj-am-oq3">
