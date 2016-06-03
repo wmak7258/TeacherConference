@@ -13,7 +13,6 @@ class DataBaseController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
 }
