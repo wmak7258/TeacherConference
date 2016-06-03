@@ -19,7 +19,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var client = SQLClient()
     var connects = true
     var id = ""
-    
+    var filled = ""
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -32,7 +32,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         let time1 = Time(Time: "4:30 PM", Taken: true, Hour: 0)
         self.timesArray.append(time1)
-
+        
         
         
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
@@ -58,17 +58,14 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         currentCell.textLabel!.text = currentTime.time
         if currentTime.taken == false{
             currentCell.detailTextLabel?.text = "Open"
+            filled = (currentCell.detailTextLabel?.text)!
+            print(filled)
         }else{
             currentCell.detailTextLabel?.text = "Taken"
+            filled = (currentCell.detailTextLabel?.text)!
+            print(filled)
         }
-//        if timeInformation.taken == true{
-//            let alert = UIAlertController(title: "Sorry", message: "This time slot have been taken", preferredStyle: .Alert)
-//            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-//            alert.addAction(cancelAction)
-//            self.presentViewController(alert, animated: true, completion: nil)
-//        } else {
-//            performSegueWithIdentifier("toDone", sender: nil)
-//        }
+        
         return currentCell
     }
     
@@ -76,12 +73,28 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return timesArray.count
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let currentTime = timesArray[indexPath.row]
+        if currentTime.taken == false {
+        performSegueWithIdentifier("toDone", sender: nil)
+        }else if currentTime.taken == true{
+        let alert = UIAlertController(title: "This slot is already filled", message: "Please choose a new time", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        }
+    }
+    
     func insertTime(){
         let time2 = Time(Time: self.timeInformation.time, Taken: false, Hour: 0)
         self.timesArray.append(time2)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    
+    
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toDone"{
             let NVC = segue.destinationViewController as! EndViewController
             let currentRow = myTableView.indexPathForSelectedRow?.row
@@ -103,8 +116,9 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     })
                 }
             }
-
+            
         }
     }
+    
 }
 

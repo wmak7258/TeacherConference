@@ -50,8 +50,6 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classArray.count
     }
