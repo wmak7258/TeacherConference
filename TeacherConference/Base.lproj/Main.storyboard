@@ -266,7 +266,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="iFO-OZ-h6N" id="Za1-TH-j64"/>
                         <outlet property="firstNameTextField" destination="mhS-Ch-tFX" id="Pbw-hP-UuX"/>
-                        <outlet property="label1" destination="v2q-G3-Txb" id="ULX-82-9Nb"/>
                         <outlet property="lastNameTextField" destination="hv4-v7-abN" id="5lC-Hl-lMR"/>
                         <outlet property="parentNameTextField" destination="9LX-Ya-ubW" id="GlE-m1-JMm"/>
                         <outlet property="passwordTextField" destination="ori-8r-KWK" id="bGP-Sb-GXH"/>
