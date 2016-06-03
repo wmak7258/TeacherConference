@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MessageUI
+import SQLClient
 
 class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
     var studentInfo5 = Student()
@@ -16,6 +17,9 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
     var teacherInfo5 = Teacher()
     var timeInfo = Time()
     var classInfo = Classes()
+    var client = SQLClient()
+    var connects = true
+    
     
     @IBOutlet weak var studentNameTextField: UILabel!
     @IBOutlet weak var parentNameTextField: UILabel!
@@ -47,6 +51,19 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
         })
         let okAction = UIAlertAction(title: "Yes", style: .Default, handler: {
             action in
+            
+            self.client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+                if connect {
+                    self.client.execute("update conference_schedule set studentPK = \(self.studentInfo5.ID) where id = \(self.timeInfo.id)", completion: { (results) in
+                        for table in results{
+                            for row in table as! NSArray
+                            {
+                                self.timeInfo.time = row.objectForKey("time_complete") as! String
+                            }
+                        }
+                    })
+                }
+            }
             
             let alert = UIAlertController(title: "Email", message: "Do you want to send an email?", preferredStyle: .Alert)
             let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: {
