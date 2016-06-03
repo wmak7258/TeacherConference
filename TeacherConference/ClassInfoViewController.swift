@@ -44,8 +44,6 @@ class ClassInfoViewController: UIViewController {
                                 self.schoolView.image = myImage
                                 let myImage2 = UIImage(named: "Bison")
                                 self.schoolView2.image = myImage2
-                                
-                                
                             } else if self.teacherInfo3.teacherSchool == "002" {
                                 self.schoolLabel.text = "School: Prospect High School"
                                 let myImage = UIImage(named: "knights")
