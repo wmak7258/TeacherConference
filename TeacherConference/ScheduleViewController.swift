@@ -50,6 +50,8 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classArray.count
     }
@@ -68,6 +70,20 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         let class2 = Classes(class1: "\(classInfo.class1)", teacher: "\(classInfo.teacher)", teacherID: "\(classInfo.teacherID)")
         self.classArray.append(class2)
         
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        
+        // Add a background view to the table view
+        let backgroundImage = UIImage(named: "HerseyBackground")
+        let imageView = UIImageView(image: backgroundImage)
+        myTableView.reloadData()
+        myTableView.backgroundView = imageView
+        myTableView.tableFooterView = UIView(frame: CGRectZero)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

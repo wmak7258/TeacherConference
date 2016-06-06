@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueback" translatesAutoresizingMaskIntoConstraints="NO" id="fPo-EE-sPt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HerseyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="fPo-EE-sPt">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1032"/>
                             </imageView>
                         </subviews>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blueback" width="2560" height="1600"/>
+        <image name="HerseyBackground" width="1078" height="674"/>
     </resources>
 </document>
