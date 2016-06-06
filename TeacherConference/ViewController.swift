@@ -39,6 +39,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         UIImage(named: "Elk Grove")!,
         UIImage(named: "wheeling")!
     ]
+    var backgroundImage: [UIImage] = [
+        UIImage(named: "HerseyBackground")!,
+        UIImage(named: "blueback")!,
+        UIImage(named: "rollingmeadowsback")!,
+        UIImage(named: "blueback")!,
+        UIImage(named: "elkback")!,
+        UIImage(named: "blueback")!
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +70,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
         schoolLogo.image = logoImage[row]
+        schoolBackground.image = backgroundImage[row]
     }
     
     @IBAction func ToNextViewController(sender: UIButton) {
