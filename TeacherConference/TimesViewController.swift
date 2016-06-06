@@ -99,7 +99,20 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             NVC.timeInfo = timesArray[currentRow!]
             NVC.classInfo = classInfo
             
+            client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
+                if connect {
+                    self.client.execute("update conference_schedule set studentPK = \(self.studentInfo4.ID) where id = \(self.timeInformation.id)", completion: { (results) in
+                        for table in results{
+                            for row in table as! NSArray
+                            {
+                                self.timeInformation.time = row.objectForKey("time_complete") as! String
+                            }
+                        }
+                    })
+                }
+            }
             
+
         }
     }
     
