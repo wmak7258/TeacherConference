@@ -40,29 +40,27 @@ class ClassInfoViewController: UIViewController {
                             
                             if self.teacherInfo3.teacherSchool == "008" {
                                 self.schoolLabel.text = "School: Buffalo Grove High School"
-                                let myImage = UIImage(named: "Bison")
+                                let myImage = UIImage(named: "buffalogrove")
                                 self.schoolView.image = myImage
-                                let myImage2 = UIImage(named: "Bison")
+                                let myImage2 = UIImage(named: "buffalogrove")
                                 self.schoolView2.image = myImage2
-                                
-                                
                             } else if self.teacherInfo3.teacherSchool == "002" {
                                 self.schoolLabel.text = "School: Prospect High School"
-                                let myImage = UIImage(named: "knights")
+                                let myImage = UIImage(named: "Prospect")
                                 self.schoolView.image = myImage
-                                let myImage2 = UIImage(named: "knights")
+                                let myImage2 = UIImage(named: "Prospect")
                                 self.schoolView2.image = myImage2
                             } else if self.teacherInfo3.teacherSchool == "004" {
                                 self.schoolLabel.text = "School: Wheeling High School"
-                                let myImage = UIImage(named: "wildcats")
+                                let myImage = UIImage(named: "wheeling")
                                 self.schoolView.image = myImage
-                                let myImage2 = UIImage(named: "wildcats")
+                                let myImage2 = UIImage(named: "wheeling")
                                 self.schoolView2.image = myImage2
                             } else if self.teacherInfo3.teacherSchool == "005" {
                                 self.schoolLabel.text = "School: Elk Grove High School"
-                                let myImage = UIImage(named: "grenadiers")
+                                let myImage = UIImage(named: "Elk Grove")
                                 self.schoolView.image = myImage
-                                let myImage2 = UIImage(named: "grenadiers")
+                                let myImage2 = UIImage(named: "Elk Grove")
                                 self.schoolView2.image = myImage2
                             } else if self.teacherInfo3.teacherSchool == "006" {
                                 self.schoolLabel.text = "School: John Hersey High School"
@@ -72,9 +70,9 @@ class ClassInfoViewController: UIViewController {
                                 self.schoolView2.image = myImage2
                             } else if self.teacherInfo3.teacherSchool == "007" {
                                 self.schoolLabel.text = "School: Rolling Meadows High School"
-                                let myImage = UIImage(named: "mustangs")
+                                let myImage = UIImage(named: "rollingmeadows")
                                 self.schoolView.image = myImage
-                                let myImage2 = UIImage(named: "mustangs")
+                                let myImage2 = UIImage(named: "rollingmeadows")
                                 self.schoolView2.image = myImage2
                             }
                             
