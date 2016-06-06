@@ -91,9 +91,6 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.timesArray.append(time2)
     }
     
-    
-    
-    
         override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toDone"{
             let NVC = segue.destinationViewController as! EndViewController
