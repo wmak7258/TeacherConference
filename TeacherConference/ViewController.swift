@@ -72,7 +72,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         schoolLogo.image = logoImage[row]
         schoolBackground.image = backgroundImage[row]
     }
-    
+    // 122578, James Smith, 8f6197c7d
     @IBAction func ToNextViewController(sender: UIButton) {
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
@@ -85,7 +85,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                             self.studentInfo.lastName = row.objectForKey("last_name") as! String
                             self.studentInfo.password = row.objectForKey("password") as! String
                             self.studentInfo.email = row.objectForKey("email_ID") as! String
-                            print(self.studentInfo.firstName)
+
                             if self.studentIdentificationTextField.text == "" {
                                 self.presentAlert()
                                 self.clearTextFields()
@@ -116,6 +116,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                     }
                 }
             }
+            
         }
         parentInfo.parentName = parentNameTextField.text!
         parentInfo.parentEmail = emailTextField.text!

@@ -34,9 +34,6 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let time1 = Time(Time: "4:30 PM", Taken: true, Hour: 0)
-        self.timesArray.append(time1)
-        
         
         
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
@@ -47,7 +44,13 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         {
                             self.timeInformation.time = row.objectForKey("time_complete") as! String
                             print(self.timeInformation.time)
-                            self.id = row.objectForKey("id") as! String
+                            self.timeInformation.id = row.objectForKey("id") as! String
+                            self.studentPK = row.objectForKey("studentPK") as! String
+                            if self.studentPK != "0"{
+                                self.filled = true
+                            }else if self.studentPK == "0"{
+                                self.filled = false
+                            }
                             self.insertTime()
                         }
                     }
@@ -62,14 +65,9 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         currentCell.textLabel!.text = currentTime.time
         if currentTime.taken == false{
             currentCell.detailTextLabel?.text = "Open"
-            filled = (currentCell.detailTextLabel?.text)!
-            print(filled)
         }else{
             currentCell.detailTextLabel?.text = "Taken"
-            filled = (currentCell.detailTextLabel?.text)!
-            print(filled)
-        }
-        
+           }
         return currentCell
     }
     
@@ -114,7 +112,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
                 if connect {
-                    self.client.execute("update conference_schedule set studentPK = \(self.studentInfo4.ID) where id = \(self.id)", completion: { (results) in
+                    self.client.execute("update conference_schedule set studentPK = \(self.studentInfo4.ID) where id = \(self.timeInformation.id)", completion: { (results) in
                         for table in results{
                             for row in table as! NSArray
                             {
@@ -124,9 +122,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     })
                 }
             }
-            
         }
     }
-    
 }
 
