@@ -16,11 +16,12 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var teacherInfo4 = Teacher()
     var timeInformation = Time()
     var classInfo = Classes()
-    var client = SQLClient()
+    let client = SQLClient()
     var connects = true
     var id = ""
-    var filled = ""
+    var filled = false
     var backgroundImage4 = UIImage()
+    var studentPK = ""
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -89,7 +90,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func insertTime(){
-        let time2 = Time(Time: self.timeInformation.time, Taken: false, Hour: 0)
+        let time2 = Time(Time: self.timeInformation.time, Taken: false, ID: timeInformation.id)
         self.timesArray.append(time2)
     }
     

@@ -18,6 +18,7 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
     var timeInfo = Time()
     var classInfo = Classes()
     var backgroundImage5 = UIImage()
+    let client = SQLClient()
     
     @IBOutlet weak var studentNameTextField: UILabel!
     @IBOutlet weak var parentNameTextField: UILabel!
