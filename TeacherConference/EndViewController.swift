@@ -66,8 +66,9 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
             }
             
             let alert = UIAlertController(title: "Email", message: "Do you want to send an email?", preferredStyle: .Alert)
-            let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: {
+            let cancelAction = UIAlertAction(title: "Log Out", style: .Default, handler: {
                 action in
+                self.navigationController?.popToRootViewControllerAnimated(true)
             })
             let emailTeacherAction = UIAlertAction(title: "To Teacher", style: .Default, handler: {
                 action in

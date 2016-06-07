@@ -85,8 +85,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                             self.studentInfo.lastName = row.objectForKey("last_name") as! String
                             self.studentInfo.password = row.objectForKey("password") as! String
                             self.studentInfo.email = row.objectForKey("email_ID") as! String
-                            self.studentInfo.ID = row.objectForKey("studentPK") as! String
-                            print(self.studentInfo.ID)
+
                             if self.studentIdentificationTextField.text == "" {
                                 self.presentAlert()
                                 self.clearTextFields()
@@ -109,10 +108,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                                 self.presentAlert()
                                 self.clearTextFields()
                             }
-                            if self.studentInfo.ID == ""{
-                                self.presentAlert()
-                                self.clearTextFields()
-                            }
                             if self.connects == true {
                                 self.performSegueWithIdentifier("schedule", sender: nil)
                                 self.clearTextFields()
@@ -121,6 +116,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                     }
                 }
             }
+            
         }
         parentInfo.parentName = parentNameTextField.text!
         parentInfo.parentEmail = emailTextField.text!

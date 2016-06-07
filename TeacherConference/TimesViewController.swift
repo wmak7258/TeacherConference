@@ -111,10 +111,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     })
                 }
             }
-            
-
         }
     }
-    
 }
 
