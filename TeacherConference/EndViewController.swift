@@ -16,6 +16,7 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
     var teacherInfo5 = Teacher()
     var timeInfo = Time()
     var classInfo = Classes()
+    var backgroundImage5 = UIImage()
     
     @IBOutlet weak var studentNameTextField: UILabel!
     @IBOutlet weak var parentNameTextField: UILabel!
@@ -27,9 +28,11 @@ class EndViewController: UIViewController,MFMailComposeViewControllerDelegate {
     @IBAction func printData(sender: UIBarButtonItem) {
         
     }
+    @IBOutlet weak var basicBack: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        basicBack.image = backgroundImage5
         studentNameTextField.text = "\(studentInfo5.firstName) \(studentInfo5.lastName)"
         parentNameTextField.text = parentInfo5.parentName
         parentEmailTextField.text = parentInfo5.parentEmail

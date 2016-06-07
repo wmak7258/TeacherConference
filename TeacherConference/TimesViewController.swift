@@ -20,13 +20,17 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var connects = true
     var id = ""
     var filled = ""
+    var backgroundImage4 = UIImage()
     
     @IBOutlet weak var myTableView: UITableView!
     
     var timesArray: [Time] = [Time]()
     var hourArray: [String] = []
     override func viewWillAppear(animated: Bool) {
+        let imageView = UIImageView(image: backgroundImage4)
         myTableView.reloadData()
+        myTableView.backgroundView = imageView
+        myTableView.tableFooterView = UIView(frame: CGRectZero)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,16 +99,6 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
     }
-    
-      func viewWillAppear2(animated: Bool) {
-        
-        // Add a background view to the table view
-        let backgroundImage = UIImage(named: "HerseyBackground")
-        let imageView = UIImageView(image: backgroundImage)
-        myTableView.backgroundView = imageView
-        myTableView.tableFooterView = UIView(frame: CGRectZero)
-        myTableView.reloadData()
-    }
 
     
         override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -116,6 +110,7 @@ class TimesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             NVC.teacherInfo5 = teacherInfo4
             NVC.timeInfo = timesArray[currentRow!]
             NVC.classInfo = classInfo
+            NVC.backgroundImage5 = backgroundImage4
             
             client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
                 if connect {

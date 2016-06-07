@@ -141,12 +141,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let NVC = segue.destinationViewController as! ScheduleViewController
         NVC.studentInfo2 = studentInfo
         NVC.parentInfo2 = parentInfo
         NVC.teacherInfo2 = teacherInfo
         NVC.studentPK = studentIdentificationTextField.text!
+        NVC.backgroundImage2 = backgroundImage[schoolPicker.selectedRowInComponent(0)]
     }
     
 }

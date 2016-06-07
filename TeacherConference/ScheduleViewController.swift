@@ -20,7 +20,8 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
     var studentPK: String!
     var classInfo = Classes()
     
-    
+    var backgroundImage2 = UIImage()
+
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -28,6 +29,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(backgroundImage2)
         client.connect("mobileappdev.d214.org", username: "MobileAppStu", password: "M0b1l3@pp", database: "HS214PTConference") { (connect) in
             if connect {
                 self.client.execute("SELECT * FROM students_courses where studentPK = \(self.studentPK)") {
@@ -66,6 +68,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         return currentCell
     }
     
+    
     func insertClass(){
         let class2 = Classes(class1: "\(classInfo.class1)", teacher: "\(classInfo.teacher)", teacherID: "\(classInfo.teacherID)")
         self.classArray.append(class2)
@@ -79,8 +82,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(animated: Bool) {
         
         // Add a background view to the table view
-        let backgroundImage = UIImage(named: "HerseyBackground")
-        let imageView = UIImageView(image: backgroundImage)
+        let imageView = UIImageView(image: backgroundImage2)
         myTableView.reloadData()
         myTableView.backgroundView = imageView
         myTableView.tableFooterView = UIView(frame: CGRectZero)
@@ -93,6 +95,7 @@ class ScheduleViewController: UIViewController, UITableViewDataSource, UITableVi
         NVC.studentInfo3 = studentInfo2
         NVC.parentInfo3 = parentInfo2
         NVC.teacherInfo3 = teacherInfo2
+        NVC.backgroundImage3 = backgroundImage2
         
     }
     
